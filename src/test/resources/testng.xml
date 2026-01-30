@@ -1,0 +1,26 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="ThinkingTester-Hybrid-Suite" parallel="false">
+
+    <test name="API Tests">
+        <groups>
+            <run>
+                <include name="api"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.thinkingtester.api.*"/>
+        </packages>
+    </test>
+
+    <test name="UI Tests">
+        <groups>
+            <run>
+                <include name="ui"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.thinkingtester.ui.*"/>
+        </packages>
+    </test>
+
+</suite>
