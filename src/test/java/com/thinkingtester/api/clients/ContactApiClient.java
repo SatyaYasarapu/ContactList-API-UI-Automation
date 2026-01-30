@@ -13,6 +13,18 @@ public class ContactApiClient {
         this.requestSpec = requestSpec;
     }
 
+    public Response singUpNewUser(Map<String, Object> signUpPayload) {
+        return RestAssured
+                        .given()
+                            .spec(requestSpec)
+                            .body(signUpPayload)
+                        .when()
+                            .post("/users")
+                        .then()
+                            .extract()
+                            .response();
+    }
+
     public Response addContact(Map<String, Object> contactPayload) {  
         return RestAssured
                         .given()
