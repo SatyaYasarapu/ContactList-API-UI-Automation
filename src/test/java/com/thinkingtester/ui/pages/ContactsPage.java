@@ -61,4 +61,12 @@ public class ContactsPage {
                 .nth(4)
                 .innerText();
     }
+
+    // Get contact country
+    public String getContactCountry(String email) {
+        return contactRowByEmail(email)
+                .locator("td")
+                .nth(7)
+                .innerText();
+    }
 }

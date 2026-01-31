@@ -9,6 +9,7 @@ import com.thinkingtester.api.clients.ContactApiClient;
 import com.thinkingtester.base.BaseUiTest;
 import com.thinkingtester.config.ConfigReader;
 import com.thinkingtester.ui.pages.ContactsPage;
+import com.thinkingtester.utils.TestDataUtil;
 
 import io.restassured.response.Response;
 
@@ -19,6 +20,8 @@ public class ContactApiUiHybridTests extends BaseUiTest{
     @Test(groups = {"api", "ui", "hybrid", "e2e"})
     public void contactCrudHybridFlow() {
         String url = ConfigReader.get("base.ui.url");
+        String email = TestDataUtil.generateUniqueEmail();
+        String phone = TestDataUtil.generatePhoneNumber();
 
         //API: Create contact
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
@@ -26,7 +29,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
 
         contactPayload.put("firstName", "Anirudh");
         contactPayload.put("lastName", "Kalvala");
-        contactPayload.put("email", "akalvala@test.com");
+        contactPayload.put("email", email);
         contactPayload.put("phone", "9000000000");
         contactPayload.put("city", "Hyderabad");
         contactPayload.put("country", "India");
@@ -39,10 +42,13 @@ public class ContactApiUiHybridTests extends BaseUiTest{
         String contactId = createResponse.jsonPath().getString("_id");
         Assert.assertNotNull(contactId, "Contact ID should not be null");
 
-        String email = createResponse.jsonPath().getString("email");
-        System.out.println("Fetched Email is: "+ email);
+        String emailFromResponse = createResponse.jsonPath().getString("email");
+        System.out.println("Fetched Email is: "+ emailFromResponse);
 
-        Assert.assertNotNull(email, "Email should not be null");
+        Assert.assertNotNull(emailFromResponse, "Email should not be null");
+
+        Assert.assertEquals(email, emailFromResponse,
+                "Email added and Fetched email from Response does not match");
 
         System.out.println("API: Contact created ->" + contactId);
 
@@ -59,7 +65,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
 
         //API: Update contact details
         Map<String, Object> updatePayload = new HashMap<>();
-        updatePayload.put("phone", "9111111111");
+        updatePayload.put("phone", phone);
 
         Response updateResponse = contactClient.updateContact(updatePayload, contactId);
 

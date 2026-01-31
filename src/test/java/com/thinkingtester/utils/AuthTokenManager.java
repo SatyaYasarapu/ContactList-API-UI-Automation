@@ -24,8 +24,8 @@ public class AuthTokenManager {
 
     private static String generateToken() {
         Map<String, Object> loginPayload = new HashMap<>();
-        loginPayload.put("email", "rpraveen@test.com");
-        loginPayload.put("password", "rpraveen123");
+        loginPayload.put("email", "gsapan@test.com");
+        loginPayload.put("password", "gsapan321");
 
         Response response = 
                         RestAssured

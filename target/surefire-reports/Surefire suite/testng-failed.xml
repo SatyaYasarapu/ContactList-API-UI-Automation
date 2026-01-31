@@ -3,12 +3,15 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.thinkingtester.api.tests.SignUpApiTests">
+      <class name="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests">
         <methods>
-          <include name="signUpWithValidData"/>
-          <include name="setUpApi"/>
+          <include name="launchBrowser"/>
+          <include name="invalidContactUpdates"/>
+          <include name="createAuthenticatedContext"/>
+          <include name="closeContext"/>
+          <include name="tearDownBrowser"/>
         </methods>
-      </class> <!-- com.thinkingtester.api.tests.SignUpApiTests -->
+      </class> <!-- com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

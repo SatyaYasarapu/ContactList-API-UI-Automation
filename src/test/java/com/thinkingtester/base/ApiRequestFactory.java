@@ -17,4 +17,12 @@ public class ApiRequestFactory {
                 .addHeader("Authorization", "Bearer " + AuthTokenManager.getToken())
                 .build();
     }
+
+    public static RequestSpecification noAuthRequest() {
+        RestAssured.baseURI = ConfigReader.get("base.api.url");
+        
+        return new RequestSpecBuilder()
+                .setContentType("application/json")
+                .build();
+    }
 }
