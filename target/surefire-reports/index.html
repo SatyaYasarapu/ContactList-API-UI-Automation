@@ -92,7 +92,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method,   1 passed</span>
+                    <span class="method-stats">2 methods,   2 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -103,7 +103,12 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests" class="method navigator-link" hash-for-method="invalidContactUpdates">invalidContactUpdates</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests" class="method navigator-link" hash-for-method="negativeContactDeletes">negativeContactDeletes</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests" class="method navigator-link" hash-for-method="negativeContactUpdates">negativeContactUpdates</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Surefire_suite -->
@@ -126,9 +131,24 @@
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="invalidContactUpdates">
-                  </a> <!-- invalidContactUpdates -->
-                  <span class="method-name">invalidContactUpdates</span>
+                  <a name="negativeContactUpdates">
+                  </a> <!-- negativeContactUpdates -->
+                  <span class="method-name">negativeContactUpdates</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Surefire_suite-class-passed -->
+          <div class="suite-Surefire_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="negativeContactDeletes">
+                  </a> <!-- negativeContactDeletes -->
+                  <span class="method-name">negativeContactDeletes</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,6 +164,7 @@
 &lt;suite name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
+      &lt;class name=&quot;com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests&quot;/&gt;
       &lt;class name=&quot;com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Surefire test --&gt;
@@ -158,7 +179,7 @@
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">Surefire test (1 class)</span>
+                <span class="test-name">Surefire test (2 classes)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -172,7 +193,11 @@
               <span class="test-group-name">api</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">invalidContactUpdates</span>
+                <span class="method-in-group-name">negativeContactDeletes</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">negativeContactUpdates</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -180,7 +205,11 @@
               <span class="test-group-name">negative</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">invalidContactUpdates</span>
+                <span class="method-in-group-name">negativeContactDeletes</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">negativeContactUpdates</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -188,7 +217,11 @@
               <span class="test-group-name">regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">invalidContactUpdates</span>
+                <span class="method-in-group-name">negativeContactDeletes</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">negativeContactUpdates</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -196,7 +229,11 @@
               <span class="test-group-name">ui</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">invalidContactUpdates</span>
+                <span class="method-in-group-name">negativeContactDeletes</span>
+                <br/>
+              </div> <!-- method-in-group -->
+              <div class="method-in-group">
+                <span class="method-in-group-name">negativeContactUpdates</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -216,16 +253,20 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(1);
+data.addRows(2);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'invalidContactUpdates')
+data.setCell(0, 1, 'negativeContactUpdates')
 data.setCell(0, 2, 'com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests')
-data.setCell(0, 3, 11498);
+data.setCell(0, 3, 12698);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'negativeContactDeletes')
+data.setCell(1, 2, 'com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests')
+data.setCell(1, 3, 1441);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 11 seconds</span>
+              <span class="suite-total-time">Total running time: 14 seconds</span>
               <div id="times-div-Surefire_suite">
               </div> <!-- times-div-Surefire_suite -->
             </div> <!-- times-div -->
@@ -258,19 +299,42 @@ return data;
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">createAuthenticatedContext</span>
-                <span class="method-start">4428 ms</span>
+                <span class="method-start">4349 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">invalidContactUpdates</span>
-                <span class="method-start">9644 ms</span>
+                <span class="method-name">negativeContactUpdates</span>
+                <span class="method-start">9399 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method after">
                 <span class="method-name">closeContext</span>
-                <span class="method-start">21162 ms</span>
+                <span class="method-start">22124 ms</span>
               </div> <!-- configuration-method after -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownBrowser</span>
-                <span class="method-start">21314 ms</span>
+                <span class="method-start">22278 ms</span>
+              </div> <!-- configuration-class after -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests</div> <!-- chronological-class-name -->
+              <div class="configuration-class before">
+                <span class="method-name">launchBrowser</span>
+                <span class="method-start">22744 ms</span>
+              </div> <!-- configuration-class before -->
+              <div class="configuration-method before">
+                <span class="method-name">createAuthenticatedContext</span>
+                <span class="method-start">24788 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">negativeContactDeletes</span>
+                <span class="method-start">25391 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method after">
+                <span class="method-name">closeContext</span>
+                <span class="method-start">26839 ms</span>
+              </div> <!-- configuration-method after -->
+              <div class="configuration-class after">
+                <span class="method-name">tearDownBrowser</span>
+                <span class="method-start">27008 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

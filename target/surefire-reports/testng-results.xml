@@ -1,41 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="2" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-01-31T11:00:52 IST" name="Surefire suite" finished-at="2026-01-31T11:01:14 IST" duration-ms="21835">
+  <suite started-at="2026-02-01T10:15:42 IST" name="Surefire suite" finished-at="2026-02-01T10:16:10 IST" duration-ms="27470">
     <groups>
       <group name="negative">
-        <method signature="NegativeUpdateHybridTests.invalidContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" name="invalidContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeUpdateHybridTests.negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" name="negativeContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeDeleteHybridTests.negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" name="negativeContactDeletes" class="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests"/>
       </group> <!-- negative -->
       <group name="ui">
-        <method signature="NegativeUpdateHybridTests.invalidContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" name="invalidContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeUpdateHybridTests.negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" name="negativeContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeDeleteHybridTests.negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" name="negativeContactDeletes" class="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests"/>
       </group> <!-- ui -->
       <group name="regression">
-        <method signature="NegativeUpdateHybridTests.invalidContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" name="invalidContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeUpdateHybridTests.negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" name="negativeContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeDeleteHybridTests.negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" name="negativeContactDeletes" class="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests"/>
       </group> <!-- regression -->
       <group name="api">
-        <method signature="NegativeUpdateHybridTests.invalidContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" name="invalidContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeUpdateHybridTests.negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" name="negativeContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
+        <method signature="NegativeDeleteHybridTests.negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" name="negativeContactDeletes" class="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests"/>
       </group> <!-- api -->
     </groups>
-    <test started-at="2026-01-31T11:00:52 IST" name="Surefire test" finished-at="2026-01-31T11:01:14 IST" duration-ms="21835">
-      <class name="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" started-at="2026-01-31T11:00:52 IST" name="launchBrowser" finished-at="2026-01-31T11:00:56 IST" duration-ms="4393" status="PASS">
+    <test started-at="2026-02-01T10:15:42 IST" name="Surefire test" finished-at="2026-02-01T10:16:10 IST" duration-ms="27470">
+      <class name="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" started-at="2026-02-01T10:16:05 IST" name="launchBrowser" finished-at="2026-02-01T10:16:07 IST" duration-ms="2041" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="createAuthenticatedContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" started-at="2026-01-31T11:00:56 IST" name="createAuthenticatedContext" finished-at="2026-01-31T11:01:02 IST" duration-ms="5079" status="PASS">
+        <test-method is-config="true" signature="createAuthenticatedContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" started-at="2026-02-01T10:16:07 IST" name="createAuthenticatedContext" finished-at="2026-02-01T10:16:08 IST" duration-ms="603" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createAuthenticatedContext -->
-        <test-method signature="invalidContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" started-at="2026-01-31T11:01:02 IST" name="invalidContactUpdates" finished-at="2026-01-31T11:01:13 IST" duration-ms="11498" status="PASS">
+        <test-method signature="negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" started-at="2026-02-01T10:16:08 IST" name="negativeContactDeletes" finished-at="2026-02-01T10:16:09 IST" depends-on-methods="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests.negativeContactUpdates" duration-ms="1441" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- invalidContactUpdates -->
-        <test-method is-config="true" signature="closeContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" started-at="2026-01-31T11:01:13 IST" name="closeContext" finished-at="2026-01-31T11:01:13 IST" duration-ms="125" status="PASS">
+        </test-method> <!-- negativeContactDeletes -->
+        <test-method is-config="true" signature="closeContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" started-at="2026-02-01T10:16:09 IST" name="closeContext" finished-at="2026-02-01T10:16:09 IST" duration-ms="161" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeContext -->
-        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@5562c41e]" started-at="2026-01-31T11:01:13 IST" name="tearDownBrowser" finished-at="2026-01-31T11:01:14 IST" duration-ms="471" status="PASS">
+        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@4d0f2471]" started-at="2026-02-01T10:16:09 IST" name="tearDownBrowser" finished-at="2026-02-01T10:16:10 IST" duration-ms="430" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDownBrowser -->
+      </class> <!-- com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests -->
+      <class name="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" started-at="2026-02-01T10:15:42 IST" name="launchBrowser" finished-at="2026-02-01T10:15:47 IST" duration-ms="4314" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="createAuthenticatedContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" started-at="2026-02-01T10:15:47 IST" name="createAuthenticatedContext" finished-at="2026-02-01T10:15:52 IST" duration-ms="4954" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createAuthenticatedContext -->
+        <test-method signature="negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" started-at="2026-02-01T10:15:52 IST" name="negativeContactUpdates" finished-at="2026-02-01T10:16:04 IST" duration-ms="12698" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeContactUpdates -->
+        <test-method is-config="true" signature="closeContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" started-at="2026-02-01T10:16:04 IST" name="closeContext" finished-at="2026-02-01T10:16:05 IST" duration-ms="117" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeContext -->
+        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4229bb3f]" started-at="2026-02-01T10:16:05 IST" name="tearDownBrowser" finished-at="2026-02-01T10:16:05 IST" duration-ms="463" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownBrowser -->

@@ -18,7 +18,6 @@ public class UpdateContactApiTest extends BaseApiTest{
     })
     public void updateContactByID() {
         String contactId = AddContactApiTest.contactId;
-        // String contactID = "123";
 
         Assert.assertNotNull(contactId, "Contact ID should not be null before GET");
 

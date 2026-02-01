@@ -16,14 +16,16 @@ import com.thinkingtester.utils.TestDataUtil;
 import io.restassured.response.Response;
 
 public class NegativeUpdateHybridTests extends BaseUiTest {
+    protected static String contactId;
+    protected static String email;
+    protected static String invalidContactId;
 
-    @Test(groups = { "api", "ui", "regression", "negative" })
-    public void invalidContactUpdates() {
+    @Test(groups = { "api", "ui", "negative", "regression"})
+    public void negativeContactUpdates() {
         String url = ConfigReader.get("base.ui.url");
-        String email = TestDataUtil.generateUniqueEmail();
+        email = TestDataUtil.generateUniqueEmail();
         String phoneNumber = TestDataUtil.generatePhoneNumber();
         String invalidPhoneNumber = TestDataUtil.generateInvalidPhoneNumber();
-        String contactId;
 
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
         ContactApiClient contactClientWithoutAuth = new ContactApiClient(ApiRequestFactory.noAuthRequest());
@@ -77,7 +79,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
         System.out.println("UI: No changes detected when an invalid contact ID is provided.");
 
         //API: Update Contact with Invalid ContactId
-        String invalidContactId = "697d930f901e190015c4e49e";
+        invalidContactId = "697d930f901e190015c4e49e";
         updatePayload.clear();
         updatePayload.put("phone", TestDataUtil.generatePhoneNumber());
 

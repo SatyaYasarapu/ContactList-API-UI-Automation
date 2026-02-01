@@ -20,6 +20,7 @@ C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkin
 C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkingtester\ui\pages\ContactsPage.java
 C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkingtester\hybrid\tests\ContactApiUiHybridTests.java
 C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkingtester\utils\AuthTokenManager.java
+C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkingtester\hybrid\tests\negative\NegativeDeleteHybridTests.java
 C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkingtester\listeners\TestListener.java
 C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkingtester\ui\pages\LoginPage.java
 C:\Users\ysatya\Testing\contact-list-api-ui-automation\src\test\java\com\thinkingtester\ui\tests\AuthBypassTest.java

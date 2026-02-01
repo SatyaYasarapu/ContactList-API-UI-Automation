@@ -1,0 +1,4 @@
+# Created at 2026-02-01T09:53:01.134
+
+com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests.negativeContactDeletes() is depending on method public void com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests.negativeContactUpdates(), which is not annotated with @Test or not included.
+
