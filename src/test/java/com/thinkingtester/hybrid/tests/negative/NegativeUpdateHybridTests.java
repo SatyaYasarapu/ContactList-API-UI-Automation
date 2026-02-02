@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.thinkingtester.api.clients.ContactApiClient;
@@ -16,21 +18,20 @@ import com.thinkingtester.utils.TestDataUtil;
 import io.restassured.response.Response;
 
 public class NegativeUpdateHybridTests extends BaseUiTest {
-    protected static String contactId;
-    protected static String email;
-    protected static String invalidContactId;
-    protected static String phoneNumber;
+    protected String contactId;
+    protected String email;
+    protected String invalidContactId;
+    protected String phoneNumber;
+    protected String invalidPhoneNumber;
+    protected String url = ConfigReader.get("base.ui.url");
 
-    @Test(groups = { "api", "ui", "negative", "regression"})
-    public void negativeContactUpdates() {
-        String url = ConfigReader.get("base.ui.url");
+    @BeforeClass(alwaysRun = true)
+    public void setupContactTestData() {
         email = TestDataUtil.generateUniqueEmail();
         phoneNumber = TestDataUtil.generatePhoneNumber();
-        String invalidPhoneNumber = TestDataUtil.generateInvalidPhoneNumber();
+        invalidPhoneNumber = TestDataUtil.generateInvalidPhoneNumber();
 
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
-        ContactApiClient contactClientWithoutAuth = new ContactApiClient(ApiRequestFactory.noAuthRequest());
-        ContactsPage contactsPage = new ContactsPage(page);
 
         // API: Create Contact
         Map<String, Object> contactPayload = new HashMap<>();
@@ -49,13 +50,19 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
         contactId = createResponse.jsonPath().getString("_id");
         Assert.assertNotNull(contactId, "Contact Id should not be null");
 
-        System.out.println("API: Contact Created. Contact Id: " + contactId);
+        System.out.println("SETUP API: Contact created with ID: " + contactId);
+    }
+
+    @Test(groups = { "api", "ui", "negative", "regression", "update"})
+    public void negativeContactUpdates() {
+        ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
+        ContactApiClient contactClientWithoutAuth = new ContactApiClient(ApiRequestFactory.noAuthRequest());
+        ContactsPage contactsPage = new ContactsPage(page);
 
         //UI: Verify Contact Exists
         page.navigate(url + "/contactList");
 
         contactsPage.waitForContactsTableToLoad();
-        
         Assert.assertTrue(contactsPage.isContactPresent(email), 
                 "Contact created via API should appear in UI");
         System.out.println("UI: Contact Found");
@@ -117,4 +124,17 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
 
         System.out.println("UI: No changes detected when an Unauthorized update is done.");
     }
+
+    @AfterClass(alwaysRun = true)
+    public void cleanUpContactTestData() {
+            if (contactId != null) {
+                    ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
+                    Response deleteResponse = contactClient.deleteContact(contactId);
+
+                    Assert.assertEquals(deleteResponse.getStatusCode(), 200,
+                                    "Expected 200 OK Status code for Contact deletion");
+                    System.out.println("CLEANUP: Contact deletion status: " + deleteResponse.getStatusCode());
+            }
+    }
+    
 }

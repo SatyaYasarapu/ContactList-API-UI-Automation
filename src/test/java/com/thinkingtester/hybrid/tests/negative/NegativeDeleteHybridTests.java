@@ -1,6 +1,11 @@
 package com.thinkingtester.hybrid.tests.negative;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.thinkingtester.api.clients.ContactApiClient;
@@ -8,21 +13,47 @@ import com.thinkingtester.base.ApiRequestFactory;
 import com.thinkingtester.base.BaseUiTest;
 import com.thinkingtester.config.ConfigReader;
 import com.thinkingtester.ui.pages.ContactsPage;
+import com.thinkingtester.utils.TestDataUtil;
 
 import io.restassured.response.Response;
 
 public class NegativeDeleteHybridTests extends BaseUiTest{
+    protected String url = ConfigReader.get("base.ui.url");
+    protected String email;
+    protected String phoneNumber;
+    protected String invalidContactId;
+    protected String contactId;
 
-    @Test(groups = {"api", "ui", "negative", "regression"}, dependsOnMethods = {
-        "com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests.negativeContactUpdates"
-    })
+    @BeforeClass(alwaysRun = true)
+    public void setupContactTestData() {
+        email = TestDataUtil.generateUniqueEmail();
+        phoneNumber = TestDataUtil.generatePhoneNumber();
+        invalidContactId = "697d930f901e190015c4e49e";
+
+        ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
+
+        // API: Create Contact
+        Map<String, Object> contactPayload = new HashMap<>();
+        contactPayload.put("firstName", "Hyndavi");
+        contactPayload.put("lastName", "Yasarapu");
+        contactPayload.put("email", email);
+        contactPayload.put("phone", phoneNumber);
+        contactPayload.put("country", "India");
+        contactPayload.put("state", "Telangana");
+        contactPayload.put("city", "Hyderabad");
+
+        Response createResponse = contactClient.addContact(contactPayload);
+        Assert.assertEquals(createResponse.getStatusCode(), 201,
+                "Expected 201 OK Status code contact creation");
+
+        contactId = createResponse.jsonPath().getString("_id");
+        Assert.assertNotNull(contactId, "Contact Id should not be null");
+
+        System.out.println("SETUP API: Contact created with ID: " + contactId);
+    }
+
+    @Test(groups = {"api", "ui", "negative", "regression", "delete"})
     public void negativeContactDeletes() {
-        String url = ConfigReader.get("base.ui.url");
-
-        String contactId = NegativeUpdateHybridTests.contactId;
-        String invalidContactId = NegativeUpdateHybridTests.invalidContactId;
-        String email = NegativeUpdateHybridTests.email;
-
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
         ContactApiClient contactClientWithoutAuth = new ContactApiClient(ApiRequestFactory.noAuthRequest());
         ContactsPage contactsPage = new ContactsPage(page);
@@ -33,7 +64,7 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
         Assert.assertEquals(deleteResponse.getStatusCode(), 404,
             "Expected 404 Not Found Status code for invalid contact Id");
 
-        System.out.println("API: Contact deleted. Invalid contactId");
+        System.out.println("API: Contact deletion failed for Invalid contactId");
 
         //UI: Verify that contact is not deleted for Invalid contactId.
         page.navigate(url + "/contactList");
@@ -48,7 +79,7 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
 
         Assert.assertEquals(deleteResponse2.getStatusCode(), 401,
                     "Expected 401 Unauthorized Status code");
-        System.out.println("API: Unauthorized delete completed");
+        System.out.println("API: Contact deletion failed successfully for Unauthorized access.");
 
         //UI: Verify contact is not deleted upon Unauthorized delete action.
         page.reload();
@@ -58,4 +89,15 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
         System.out.println("UI: Contact Found on Unauthorized deletion");
     }
     
+    @AfterClass(alwaysRun = true)
+    public void cleanUpContactTestData() {
+        if(contactId != null) {
+            ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
+
+            Response deleteResponse = contactClient.deleteContact(contactId);
+            Assert.assertEquals(deleteResponse.getStatusCode(), 200,
+                        "Expected 200 OK Status code for Contact Deletion");
+            System.out.println("CLEANUP: Contact deletion status: " + deleteResponse.getStatusCode());
+        }
+    }
 }

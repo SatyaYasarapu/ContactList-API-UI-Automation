@@ -1,1 +1,0 @@
-{"uuid":"ba2dd167-1347-41e5-b993-4d4cef4ebc7f","name":"com.thinkingtester.api.tests.SignUpApiTests","children":["898dcf2c-40be-4efc-8fe9-ad3449e09cb5"],"befores":[{"name":"setUpApi","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1769757974690,"stop":1769757978510}],"afters":[],"start":1769757974659,"stop":1769757979750}

@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.thinkingtester.api.tests.SignUpApiTests
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 8.219 s -- in com.thinkingtester.api.tests.SignUpApiTests
