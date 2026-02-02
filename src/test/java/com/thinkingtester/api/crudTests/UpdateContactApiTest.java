@@ -1,4 +1,4 @@
-package com.thinkingtester.api.tests;
+package com.thinkingtester.api.crudTests;
 
 import java.util.HashMap;
 import java.util.Map;

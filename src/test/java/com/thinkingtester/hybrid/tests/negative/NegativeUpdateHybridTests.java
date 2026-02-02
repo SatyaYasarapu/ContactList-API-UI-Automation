@@ -19,12 +19,13 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
     protected static String contactId;
     protected static String email;
     protected static String invalidContactId;
+    protected static String phoneNumber;
 
     @Test(groups = { "api", "ui", "negative", "regression"})
     public void negativeContactUpdates() {
         String url = ConfigReader.get("base.ui.url");
         email = TestDataUtil.generateUniqueEmail();
-        String phoneNumber = TestDataUtil.generatePhoneNumber();
+        phoneNumber = TestDataUtil.generatePhoneNumber();
         String invalidPhoneNumber = TestDataUtil.generateInvalidPhoneNumber();
 
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());

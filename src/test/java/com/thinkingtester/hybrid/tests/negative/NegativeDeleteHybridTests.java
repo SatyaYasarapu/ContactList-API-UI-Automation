@@ -55,7 +55,7 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
 
         Assert.assertTrue(contactsPage.isContactPresent(email), 
                 "Contact is deleted upon Unauthorized access.");
-        System.out.println("UI: Contact Found on Unauthorized deletion.");
+        System.out.println("UI: Contact Found on Unauthorized deletion");
     }
     
 }

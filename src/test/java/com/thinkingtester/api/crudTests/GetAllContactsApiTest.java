@@ -1,4 +1,4 @@
-package com.thinkingtester.api.tests;
+package com.thinkingtester.api.crudTests;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
