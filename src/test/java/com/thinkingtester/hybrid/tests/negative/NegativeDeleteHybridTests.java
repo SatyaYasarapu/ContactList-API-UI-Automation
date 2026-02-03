@@ -52,7 +52,7 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
         System.out.println("SETUP API: Contact created with ID: " + contactId);
     }
 
-    @Test(groups = {"api", "ui", "negative", "regression", "delete"})
+    @Test(groups = {"hybrid", "regression"})
     public void negativeContactDeletes() {
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
         ContactApiClient contactClientWithoutAuth = new ContactApiClient(ApiRequestFactory.noAuthRequest());

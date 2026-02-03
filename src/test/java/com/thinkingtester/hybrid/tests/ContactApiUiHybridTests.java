@@ -40,7 +40,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
         contactPayload.put("country", "India");
     }
     
-    @Test(groups = {"api", "ui", "hybrid", "e2e"})
+    @Test(groups = {"hybrid", "regression"})
     public void contactCrudHybridFlow() {
         //API: Create contact
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());

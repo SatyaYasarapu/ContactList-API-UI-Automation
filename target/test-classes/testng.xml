@@ -23,4 +23,14 @@
         </packages>
     </test>
 
+    <test name="HYBRID Tests">
+        <groups>
+            <run>
+                <include name="hybrid"/>
+            </run>
+        </groups>
+        <packages>
+            <package name="com.thinkingtester.hybrid.*"/>
+        </packages>
+    </test>
 </suite>

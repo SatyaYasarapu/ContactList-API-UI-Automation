@@ -53,7 +53,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
         System.out.println("SETUP API: Contact created with ID: " + contactId);
     }
 
-    @Test(groups = { "api", "ui", "negative", "regression", "update"})
+    @Test(groups = {"hybrid", "regression"})
     public void negativeContactUpdates() {
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
         ContactApiClient contactClientWithoutAuth = new ContactApiClient(ApiRequestFactory.noAuthRequest());

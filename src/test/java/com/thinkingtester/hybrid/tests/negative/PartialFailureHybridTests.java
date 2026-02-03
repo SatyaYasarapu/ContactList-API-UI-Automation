@@ -51,7 +51,7 @@ public class PartialFailureHybridTests extends BaseUiTest{
         System.out.println("SETUP API: Contact created with ID: " + contactId);
     }
 
-    @Test(groups = {"api", "ui", "regression", "partial"})
+    @Test(groups = {"hybrid", "regression"})
     public void partialE2EContactsFlow() {
         ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
         ContactsPage contactsPage = new ContactsPage(page);

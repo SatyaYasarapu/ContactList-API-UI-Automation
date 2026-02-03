@@ -4,25 +4,32 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import com.thinkingtester.api.clients.ContactApiClient;
+import com.thinkingtester.base.ApiRequestFactory;
 import com.thinkingtester.base.BaseApiTest;
+import com.thinkingtester.utils.TestDataUtil;
 
 import io.restassured.response.Response;
 
 public class AddContactApiTest extends BaseApiTest {
-    protected static String contactId;
+    protected String contactId;
+    protected String email;
+    protected String phoneNumber;
+    protected Map<String, Object> contactPayload = new HashMap<>();
 
     @Test(groups = {"api", "regression"})
     public void addContactWithValidData() {
-        ContactApiClient contactClient = new ContactApiClient(baseRequestSpec);
+        email = TestDataUtil.generateUniqueEmail();
+        phoneNumber = TestDataUtil.generatePhoneNumber();
 
-        Map<String, Object> contactPayload = new HashMap<>();
+        ContactApiClient contactClient = new ContactApiClient(baseRequestSpec);
         contactPayload.put("firstName", "Nikhila");
         contactPayload.put("lastName", "Surabhi");
-        contactPayload.put("email", "nikhilasurabhi@test.com");
-        contactPayload.put("phone", "9876543210");
+        contactPayload.put("email", email);
+        contactPayload.put("phone", phoneNumber);
         contactPayload.put("city", "Hyderabad");
         contactPayload.put("state", "Telangana");
         contactPayload.put("country", "India");
@@ -38,5 +45,14 @@ public class AddContactApiTest extends BaseApiTest {
         System.out.println("Contact created successfully. ID = " + contactId);
 
         System.out.println("Response for " +contactId+ " is: " + response.asPrettyString());
+    }
+    @AfterClass(alwaysRun = true)
+    public void cleanupContactTestData() {
+        if(contactId != null){
+            ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
+        
+            Response deleteResponse = contactClient.deleteContact(contactId);
+            System.out.println("CLEANUP: Deleted contact status code: " + deleteResponse.getStatusCode());
+        }
     }
 }
