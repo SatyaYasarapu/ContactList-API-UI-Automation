@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 
 import com.thinkingtester.api.clients.ContactApiClient;
@@ -57,8 +58,8 @@ public class ContactCrudApiTests extends BaseApiTest{
 
         //Update contact
         String newEmail = TestDataUtil.generateUniqueEmail();
-        String newPhoneNumber = TestDataUtil.generateUniqueEmail();
-        
+        String newPhoneNumber = TestDataUtil.generatePhoneNumber();
+
         updateContactPayload.put("email", newEmail);
         updateContactPayload.put("phone", newPhoneNumber);
 
@@ -80,9 +81,20 @@ public class ContactCrudApiTests extends BaseApiTest{
 
         //Post Validation for deletion.
         Response validatedeleteResponse = contactClient.getContactById(contactId);
+        contactId = null;
 
         Assert.assertEquals(validatedeleteResponse.getStatusCode(), 404,
                 "Deleted contact should not be retrievable");
         System.out.println("Deleted contact successfully not retrieved");
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void cleanUpContactTestData() {
+        if(contactId != null){
+            ContactApiClient contactClient = new ContactApiClient(baseRequestSpec);
+            Response deleteResponse = contactClient.deleteContact(contactId);
+
+            System.out.println("CLEANUP: Contact deleted with status code: " + deleteResponse.getStatusCode());
+        }
     }
 }

@@ -16,10 +16,13 @@ com\thinkingtester\base\ApiRequestFactory.class
 com\thinkingtester\e2e\EndToEndTests.class
 com\thinkingtester\api\crudTests\DeleteContactApiTest.class
 com\thinkingtester\ui\tests\AuthBypassTest.class
+com\thinkingtester\hybrid\tests\negative\NegativeUpdateHybridTests.class
 com\thinkingtester\utils\AuthTokenManager.class
 com\thinkingtester\base\BaseUiTest.class
+com\thinkingtester\hybrid\tests\negative\NegativeDeleteHybridTests.class
 com\thinkingtester\api\clients\ContactApiClient.class
 com\thinkingtester\ui\pages\ContactsPage.class
 com\thinkingtester\listeners\TestListener.class
 com\thinkingtester\api\crudTests\UpdateContactApiTest.class
 com\thinkingtester\hybrid\tests\ContactApiUiHybridTests.class
+com\thinkingtester\hybrid\tests\negative\PartialFailureHybridTests.class

@@ -60,7 +60,7 @@
                 </li>
                 <li>
                   <a href="#" panel-name="group-Surefire_suite" class="navigator-link ">
-                    <span>4 groups</span>
+                    <span>3 groups</span>
                   </a> <!-- navigator-link  -->
                 </li>
                 <li>
@@ -103,7 +103,7 @@
                     <div class="method-list-content passed suite-Surefire_suite">
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Surefire_suite" title="com.thinkingtester.api.tests.NegativeContactCrudApiTests" class="method navigator-link" hash-for-method="negativeContacte2eFlow">negativeContacte2eFlow</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Surefire_suite" title="com.thinkingtester.api.tests.ContactCrudApiTests" class="method navigator-link" hash-for-method="contacte2eFlow">contacte2eFlow</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                     </div> <!-- method-list-content passed suite-Surefire_suite -->
@@ -121,14 +121,14 @@
           <div class="suite-Surefire_suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
-              <span class="class-name">com.thinkingtester.api.tests.NegativeContactCrudApiTests</span>
+              <span class="class-name">com.thinkingtester.api.tests.ContactCrudApiTests</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="negativeContacte2eFlow">
-                  </a> <!-- negativeContacte2eFlow -->
-                  <span class="method-name">negativeContacte2eFlow</span>
+                  <a name="contacte2eFlow">
+                  </a> <!-- contacte2eFlow -->
+                  <span class="method-name">contacte2eFlow</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -144,7 +144,7 @@
 &lt;suite name=&quot;Surefire suite&quot; verbose=&quot;0&quot;&gt;
   &lt;test thread-count=&quot;5&quot; name=&quot;Surefire test&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.thinkingtester.api.tests.NegativeContactCrudApiTests&quot;/&gt;
+      &lt;class name=&quot;com.thinkingtester.api.tests.ContactCrudApiTests&quot;/&gt;
     &lt;/classes&gt;
   &lt;/test&gt; &lt;!-- Surefire test --&gt;
 &lt;/suite&gt; &lt;!-- Surefire suite --&gt;
@@ -172,23 +172,15 @@
               <span class="test-group-name">api</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">negativeContacte2eFlow</span>
+                <span class="method-in-group-name">contacte2eFlow</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
             <div class="test-group">
-              <span class="test-group-name">e2e</span>
+              <span class="test-group-name">crud</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">negativeContacte2eFlow</span>
-                <br/>
-              </div> <!-- method-in-group -->
-            </div> <!-- test-group -->
-            <div class="test-group">
-              <span class="test-group-name">negative</span>
-              <br/>
-              <div class="method-in-group">
-                <span class="method-in-group-name">negativeContacte2eFlow</span>
+                <span class="method-in-group-name">contacte2eFlow</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -196,7 +188,7 @@
               <span class="test-group-name">regression</span>
               <br/>
               <div class="method-in-group">
-                <span class="method-in-group-name">negativeContacte2eFlow</span>
+                <span class="method-in-group-name">contacte2eFlow</span>
                 <br/>
               </div> <!-- method-in-group -->
             </div> <!-- test-group -->
@@ -218,9 +210,9 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(1);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'negativeContacte2eFlow')
-data.setCell(0, 2, 'com.thinkingtester.api.tests.NegativeContactCrudApiTests')
-data.setCell(0, 3, 12742);
+data.setCell(0, 1, 'contacte2eFlow')
+data.setCell(0, 2, 'com.thinkingtester.api.tests.ContactCrudApiTests')
+data.setCell(0, 3, 12956);
 window.suiteTableData['Surefire_suite']= { tableData: data, tableDiv: 'times-div-Surefire_suite'}
 return data;
 }
@@ -251,22 +243,18 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.thinkingtester.api.tests.NegativeContactCrudApiTests</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.thinkingtester.api.tests.ContactCrudApiTests</div> <!-- chronological-class-name -->
               <div class="configuration-class before">
                 <span class="method-name">setUpApi</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-class before -->
-              <div class="configuration-class before">
-                <span class="method-name">setupContactTestData</span>
-                <span class="method-start">4073 ms</span>
-              </div> <!-- configuration-class before -->
               <div class="test-method">
-                <span class="method-name">negativeContacte2eFlow</span>
-                <span class="method-start">5308 ms</span>
+                <span class="method-name">contacte2eFlow</span>
+                <span class="method-start">5251 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">cleanUpContactTestData</span>
-                <span class="method-start">18111 ms</span>
+                <span class="method-start">18326 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

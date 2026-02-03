@@ -9,7 +9,7 @@ import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.thinkingtester.api.clients.ContactApiClient;
-import com.thinkingtester.base.ApiRequestFactory;
+
 import com.thinkingtester.base.BaseApiTest;
 import com.thinkingtester.utils.TestDataUtil;
 

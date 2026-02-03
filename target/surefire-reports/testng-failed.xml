@@ -3,14 +3,13 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.thinkingtester.api.tests.NegativeContactCrudApiTests">
+      <class name="com.thinkingtester.api.tests.ContactCrudApiTests">
         <methods>
-          <include name="setupContactTestData"/>
           <include name="cleanUpContactTestData"/>
-          <include name="negativeContacte2eFlow"/>
+          <include name="contacte2eFlow"/>
           <include name="setUpApi"/>
         </methods>
-      </class> <!-- com.thinkingtester.api.tests.NegativeContactCrudApiTests -->
+      </class> <!-- com.thinkingtester.api.tests.ContactCrudApiTests -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->
