@@ -3,17 +3,14 @@
 <suite name="Failed suite [Surefire suite]" verbose="0">
   <test thread-count="5" name="Surefire test(failed)" verbose="0">
     <classes>
-      <class name="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests">
+      <class name="com.thinkingtester.api.tests.NegativeContactCrudApiTests">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="cleanUpContactTestData"/>
-          <include name="negativeContactDeletes"/>
-          <include name="createAuthenticatedContext"/>
-          <include name="closeContext"/>
-          <include name="tearDownBrowser"/>
           <include name="setupContactTestData"/>
+          <include name="cleanUpContactTestData"/>
+          <include name="negativeContacte2eFlow"/>
+          <include name="setUpApi"/>
         </methods>
-      </class> <!-- com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests -->
+      </class> <!-- com.thinkingtester.api.tests.NegativeContactCrudApiTests -->
     </classes>
   </test> <!-- Surefire test(failed) -->
 </suite> <!-- Failed suite [Surefire suite] -->

@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 
 import com.thinkingtester.api.clients.ContactApiClient;
 import com.thinkingtester.base.BaseApiTest;
+import com.thinkingtester.utils.TestDataUtil;
 
 import io.restassured.response.Response;
 
@@ -16,6 +17,8 @@ public class ContactCrudApiTests extends BaseApiTest{
     private String contactId;
     private Map<String, Object> contactPayload = new HashMap<>();
     private Map<String, Object> updateContactPayload = new HashMap<>();
+    private String email = TestDataUtil.generateUniqueEmail();
+    private String phoneNumber = TestDataUtil.generatePhoneNumber();
 
     @Test(groups = {"api", "regression", "crud"})
     public void contacte2eFlow() {
@@ -24,8 +27,8 @@ public class ContactCrudApiTests extends BaseApiTest{
         //Create new Contact
         contactPayload.put("firstName", "William");
         contactPayload.put("lastName", "Byers");
-        contactPayload.put("email", "williambyers@test.com");
-        contactPayload.put("phone", "9876543210");
+        contactPayload.put("email", email);
+        contactPayload.put("phone", phoneNumber);
         contactPayload.put("city", "Hawkins");
         contactPayload.put("state", "Texas");
         contactPayload.put("country", "United States of America");
@@ -42,9 +45,6 @@ public class ContactCrudApiTests extends BaseApiTest{
 
         //Get Contact
         Response getResponse = contactClient.getContactById(contactId);
-
-        Assert.assertNotNull(contactId,
-            "Contact ID should not be NULL before GET");
         
         Assert.assertEquals(getResponse.getStatusCode(), 200, 
             "Expected 200 OK Status code to retrieve contact details");
@@ -56,8 +56,11 @@ public class ContactCrudApiTests extends BaseApiTest{
                     + response.asPrettyString());
 
         //Update contact
-        updateContactPayload.put("email", "willbyers@test.com");
-        updateContactPayload.put("phone", "9087153414");
+        String newEmail = TestDataUtil.generateUniqueEmail();
+        String newPhoneNumber = TestDataUtil.generateUniqueEmail();
+        
+        updateContactPayload.put("email", newEmail);
+        updateContactPayload.put("phone", newPhoneNumber);
 
         Response updateResponse = contactClient.updateContact(updateContactPayload, contactId);
 

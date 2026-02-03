@@ -3,6 +3,8 @@ package com.thinkingtester.hybrid.tests;
 import java.util.*;
 
 import org.testng.Assert;
+import org.testng.annotations.AfterClass;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
 import com.thinkingtester.api.clients.ContactApiClient;
@@ -16,30 +18,38 @@ import io.restassured.response.Response;
 import com.thinkingtester.base.ApiRequestFactory;
 
 public class ContactApiUiHybridTests extends BaseUiTest{
-    
-    @Test(groups = {"api", "ui", "hybrid", "e2e"})
-    public void contactCrudHybridFlow() {
-        String url = ConfigReader.get("base.ui.url");
-        String email = TestDataUtil.generateUniqueEmail();
-        String phone = TestDataUtil.generatePhoneNumber();
+    protected String url = ConfigReader.get("base.ui.url");
+    protected String email;
+    protected String phone;
+    protected String contactId;
+    protected Map<String, Object> contactPayload;
 
-        //API: Create contact
-        ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
-        Map<String, Object> contactPayload = new HashMap<>();
+    @BeforeClass(alwaysRun = true)
+    public void setupContactTestData() {
+        url = ConfigReader.get("base.ui.url");
+        email = TestDataUtil.generateUniqueEmail();
+        phone = TestDataUtil.generatePhoneNumber();
+
+        contactPayload = new HashMap<>();
 
         contactPayload.put("firstName", "Anirudh");
         contactPayload.put("lastName", "Kalvala");
         contactPayload.put("email", email);
-        contactPayload.put("phone", "9000000000");
+        contactPayload.put("phone", phone);
         contactPayload.put("city", "Hyderabad");
         contactPayload.put("country", "India");
-
+    }
+    
+    @Test(groups = {"api", "ui", "hybrid", "e2e"})
+    public void contactCrudHybridFlow() {
+        //API: Create contact
+        ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
         Response createResponse = contactClient.addContact(contactPayload);
 
         Assert.assertEquals(createResponse.getStatusCode(), 201,
-                "Expected 200 OK status code for contact creation");
+                "Expected 201 OK status code for contact creation");
         
-        String contactId = createResponse.jsonPath().getString("_id");
+        contactId = createResponse.jsonPath().getString("_id");
         Assert.assertNotNull(contactId, "Contact ID should not be null");
 
         String emailFromResponse = createResponse.jsonPath().getString("email");
@@ -65,26 +75,28 @@ public class ContactApiUiHybridTests extends BaseUiTest{
 
         //API: Update contact details
         Map<String, Object> updatePayload = new HashMap<>();
-        updatePayload.put("phone", phone);
+        String newPhoneNumber = TestDataUtil.generatePhoneNumber();
+        updatePayload.put("phone", newPhoneNumber);
 
         Response updateResponse = contactClient.updateContact(updatePayload, contactId);
 
         Assert.assertEquals(updateResponse.statusCode(), 200,
                 "Expected 200 OK Status code for updating contact successfully!");
         
-        System.out.println("API: Contact Updated.");
+        System.out.println("API: Contact Updated. New PhoneNumber: " + newPhoneNumber);
 
         //UI: Verify email is updated.
         page.reload();
-
         String updatedPhone = contactPage.getContactPhone(email);
 
-        Assert.assertNotEquals(createResponse.jsonPath().getString("phone"), updatedPhone,
-                "Updated phone number not reflected in UI");
+        Assert.assertEquals(updatedPhone, newPhoneNumber,
+                "Updated phone number not reflected correctly in UI");
+
         System.out.println("UI: Update reflected: " + updatedPhone);
 
         //API: Delete Contact
         Response deleteResponse = contactClient.deleteContact(contactId);
+        contactId = null;
 
         Assert.assertEquals(deleteResponse.getStatusCode(), 200,
                 "Expected 200 OK Status code for contact deletion.");
@@ -97,5 +109,15 @@ public class ContactApiUiHybridTests extends BaseUiTest{
             "Deleted contact should not appear in UI");
 
         System.out.println("UI: Deletion reflected");
+    }
+
+    @AfterClass(alwaysRun = true)
+    public void cleanUpContactTestData() {
+            if (contactId != null) {
+                    ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
+                    Response deleteResponse = contactClient.deleteContact(contactId);
+
+                    System.out.println("CLEANUP API: Contact Deleted Status code: " + deleteResponse.getStatusCode());
+            }
     }
 }
