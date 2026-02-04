@@ -7,11 +7,13 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import com.thinkingtester.base.BaseApiTest;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 
 public class LoginApiTests extends BaseApiTest{
+    private static final TestLogger logger = TestLogger.getLogger(LoginApiTests.class);
 
     @Test(groups = {"api", "smoke"})
     public void loginwithValidCredentials() {
@@ -30,8 +32,8 @@ public class LoginApiTests extends BaseApiTest{
                                         .extract()
                                         .response();
         Assert.assertNotNull(response.jsonPath().getString("token"),
-                    "Auth token should not be null");  
-        System.out.println("Valid Case" + response.asPrettyString());
+                    "Auth token should not be null");
+        logger.debugResponse("Valid Login", response.asPrettyString());
      }
 
     @Test(groups = {"api", "negative"})
@@ -54,6 +56,6 @@ public class LoginApiTests extends BaseApiTest{
                 || response.asString().contains("Unauthorized"),
                 "Expected unauthorized response");
 
-        System.out.println("Negative login validated successfully");
+        logger.validation("Negative login validated successfully - 401 Unauthorized");
      }
 }

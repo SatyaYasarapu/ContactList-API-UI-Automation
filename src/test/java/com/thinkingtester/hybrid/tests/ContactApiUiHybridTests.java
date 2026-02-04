@@ -12,12 +12,14 @@ import com.thinkingtester.base.BaseUiTest;
 import com.thinkingtester.config.ConfigReader;
 import com.thinkingtester.ui.pages.ContactsPage;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 import com.thinkingtester.base.ApiRequestFactory;
 
 public class ContactApiUiHybridTests extends BaseUiTest{
+    private static final TestLogger logger = TestLogger.getHybridLogger(ContactApiUiHybridTests.class);
     protected String url = ConfigReader.get("base.ui.url");
     protected String email;
     protected String phone;
@@ -53,14 +55,14 @@ public class ContactApiUiHybridTests extends BaseUiTest{
         Assert.assertNotNull(contactId, "Contact ID should not be null");
 
         String emailFromResponse = createResponse.jsonPath().getString("email");
-        System.out.println("Fetched Email is: "+ emailFromResponse);
+        logger.debug("Fetched Email from response: %s", emailFromResponse);
 
         Assert.assertNotNull(emailFromResponse, "Email should not be null");
 
         Assert.assertEquals(email, emailFromResponse,
                 "Email added and Fetched email from Response does not match");
 
-        System.out.println("API: Contact created ->" + contactId);
+        logger.api("Contact created with ID: %s", contactId);
 
         //UI: Verify Contact Exists
         page.navigate(url + "/contactList");
@@ -71,7 +73,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
         Assert.assertTrue(contactPage.isContactPresent(email),
                 "Contact created via API should appear in UI");
 
-        System.out.println("UI: Contact Found: " + email);
+        logger.ui("Contact found: %s", email);
 
         //API: Update contact details
         Map<String, Object> updatePayload = new HashMap<>();
@@ -82,8 +84,8 @@ public class ContactApiUiHybridTests extends BaseUiTest{
 
         Assert.assertEquals(updateResponse.statusCode(), 200,
                 "Expected 200 OK Status code for updating contact successfully!");
-        
-        System.out.println("API: Contact Updated. New PhoneNumber: " + newPhoneNumber);
+
+        logger.api("Contact updated - New PhoneNumber: %s", newPhoneNumber);
 
         //UI: Verify email is updated.
         page.reload();
@@ -92,7 +94,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
         Assert.assertEquals(updatedPhone, newPhoneNumber,
                 "Updated phone number not reflected correctly in UI");
 
-        System.out.println("UI: Update reflected: " + updatedPhone);
+        logger.ui("Update reflected - Phone: %s", updatedPhone);
 
         //API: Delete Contact
         Response deleteResponse = contactClient.deleteContact(contactId);
@@ -100,7 +102,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
 
         Assert.assertEquals(deleteResponse.getStatusCode(), 200,
                 "Expected 200 OK Status code for contact deletion.");
-        System.out.println("API: Contact Deleted");
+        logger.api("Contact deleted successfully");
 
         //UI: Verify delete
         page.reload();
@@ -108,7 +110,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
         Assert.assertFalse(contactPage.isContactPresent(email),
             "Deleted contact should not appear in UI");
 
-        System.out.println("UI: Deletion reflected");
+        logger.ui("Deletion reflected - Contact not present in UI");
     }
 
     @AfterClass(alwaysRun = true)
@@ -117,7 +119,7 @@ public class ContactApiUiHybridTests extends BaseUiTest{
                     ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
                     Response deleteResponse = contactClient.deleteContact(contactId);
 
-                    System.out.println("CLEANUP API: Contact Deleted Status code: " + deleteResponse.getStatusCode());
+                    logger.cleanup("API: Contact deleted - Status code: %s", deleteResponse.getStatusCode());
             }
     }
 }

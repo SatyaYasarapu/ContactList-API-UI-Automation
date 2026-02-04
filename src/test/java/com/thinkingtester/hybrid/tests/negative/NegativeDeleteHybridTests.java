@@ -14,10 +14,12 @@ import com.thinkingtester.base.BaseUiTest;
 import com.thinkingtester.config.ConfigReader;
 import com.thinkingtester.ui.pages.ContactsPage;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 public class NegativeDeleteHybridTests extends BaseUiTest{
+    private static final TestLogger logger = TestLogger.getHybridLogger(NegativeDeleteHybridTests.class);
     protected String url = ConfigReader.get("base.ui.url");
     protected String email;
     protected String phoneNumber;
@@ -49,7 +51,7 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
         contactId = createResponse.jsonPath().getString("_id");
         Assert.assertNotNull(contactId, "Contact Id should not be null");
 
-        System.out.println("SETUP API: Contact created with ID: " + contactId);
+        logger.setup("API: Contact created with ID: %s", contactId);
     }
 
     @Test(groups = {"hybrid", "regression"})
@@ -64,29 +66,29 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
         Assert.assertEquals(deleteResponse.getStatusCode(), 404,
             "Expected 404 Not Found Status code for invalid contact Id");
 
-        System.out.println("API: Contact deletion failed for Invalid contactId");
+        logger.api("Contact deletion failed - Invalid contactId (404 Not Found)");
 
         //UI: Verify that contact is not deleted for Invalid contactId.
         page.navigate(url + "/contactList");
 
-        Assert.assertTrue(contactsPage.isContactPresent(email), 
+        Assert.assertTrue(contactsPage.isContactPresent(email),
                 "Unfortunately Contact is deleted when Invalid contact Id is passed");
 
-        System.out.println("UI: Contact Found upon invalid deletion." + email);
+        logger.ui("Contact found after invalid deletion attempt: %s", email);
 
         //API: Delete Contact without Authentication
         Response deleteResponse2 = contactClientWithoutAuth.deleteContact(contactId);
 
         Assert.assertEquals(deleteResponse2.getStatusCode(), 401,
                     "Expected 401 Unauthorized Status code");
-        System.out.println("API: Contact deletion failed successfully for Unauthorized access.");
+        logger.api("Contact deletion failed - Unauthorized access (401)");
 
         //UI: Verify contact is not deleted upon Unauthorized delete action.
         page.reload();
 
-        Assert.assertTrue(contactsPage.isContactPresent(email), 
+        Assert.assertTrue(contactsPage.isContactPresent(email),
                 "Contact is deleted upon Unauthorized access.");
-        System.out.println("UI: Contact Found on Unauthorized deletion");
+        logger.ui("Contact found after unauthorized deletion attempt");
     }
     
     @AfterClass(alwaysRun = true)
@@ -97,7 +99,7 @@ public class NegativeDeleteHybridTests extends BaseUiTest{
             Response deleteResponse = contactClient.deleteContact(contactId);
             Assert.assertEquals(deleteResponse.getStatusCode(), 200,
                         "Expected 200 OK Status code for Contact Deletion");
-            System.out.println("CLEANUP: Contact deletion status: " + deleteResponse.getStatusCode());
+            logger.cleanup("Contact deletion status: %s", deleteResponse.getStatusCode());
         }
     }
 }

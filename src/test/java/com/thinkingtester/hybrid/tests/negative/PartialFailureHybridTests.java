@@ -14,10 +14,12 @@ import com.thinkingtester.base.BaseUiTest;
 import com.thinkingtester.config.ConfigReader;
 import com.thinkingtester.ui.pages.ContactsPage;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 public class PartialFailureHybridTests extends BaseUiTest{
+    private static final TestLogger logger = TestLogger.getHybridLogger(PartialFailureHybridTests.class);
     protected String url = ConfigReader.get("base.ui.url");
     protected String email;
     protected String contactId;
@@ -48,7 +50,7 @@ public class PartialFailureHybridTests extends BaseUiTest{
         contactId = createResponse.jsonPath().getString("_id");
         Assert.assertNotNull(contactId, "Contact Id should not be null");
 
-        System.out.println("SETUP API: Contact created with ID: " + contactId);
+        logger.setup("API: Contact created with ID: %s", contactId);
     }
 
     @Test(groups = {"hybrid", "regression"})
@@ -66,14 +68,14 @@ public class PartialFailureHybridTests extends BaseUiTest{
 
         Assert.assertEquals(updateResponse.getStatusCode(), 200,
                 "Expected 200 OK Status code for contact updation.");
-        System.out.println("API: Contact Updated. Updated PhoneNumber is: " + updatedPhoneNumber);
+        logger.api("Contact updated - New PhoneNumber: %s", updatedPhoneNumber);
 
         //UI: Verify Contact Phone Number is changed.
         page.navigate(url + "/contactList");
 
         Assert.assertNotEquals(phoneNumber, contactsPage.getContactPhone(email),
                     "Actual Phone Number and Updated Phone numbers are same.");
-        System.out.println("UI: PhoneNumber updated from "+ phoneNumber +" to new PhoneNumber: " + contactsPage.getContactPhone(email));
+        logger.ui("PhoneNumber updated from %s to %s", phoneNumber, contactsPage.getContactPhone(email));
 
         //API: Invalid Update with invalid Payload data.
         invalidPhoneNumber = TestDataUtil.generateInvalidPhoneNumber();
@@ -85,7 +87,7 @@ public class PartialFailureHybridTests extends BaseUiTest{
         Assert.assertEquals(updateResponse2.getStatusCode(), 400,
                 "Expected 400 Bad Request Status code for Invalid Updation.");
 
-        System.out.println("API: Invalid Update Completed.");
+        logger.api("Invalid update completed (400 Bad Request)");
 
         //UI: Verify Invalid Update
         page.reload();
@@ -94,7 +96,7 @@ public class PartialFailureHybridTests extends BaseUiTest{
         Assert.assertEquals(updatedPhoneNumber, invalidPhoneUpdate,
                     "Phone Number is changed after invalid Update");
 
-        System.out.println("UI: PhoneNumber remains unchanged: " + contactsPage.getContactPhone(email));
+        logger.ui("PhoneNumber remains unchanged: %s", contactsPage.getContactPhone(email));
     }
 
     @AfterClass(alwaysRun = true)
@@ -103,7 +105,7 @@ public class PartialFailureHybridTests extends BaseUiTest{
             ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
 
             Response deleteResponse = contactClient.deleteContact(contactId);
-            System.out.println("CLEANUP: Contact deletion status: " + deleteResponse.getStatusCode());
+            logger.cleanup("Contact deletion status: %s", deleteResponse.getStatusCode());
         }
     }
 }

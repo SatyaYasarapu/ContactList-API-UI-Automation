@@ -12,10 +12,12 @@ import com.thinkingtester.api.clients.ContactApiClient;
 
 import com.thinkingtester.base.BaseApiTest;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 public class NegativeContactCrudApiTests extends BaseApiTest{
+    private static final TestLogger logger = TestLogger.getLogger(NegativeContactCrudApiTests.class);
     private String contactId;
     private String email;
     private String invalidEmail;
@@ -41,7 +43,7 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
         Assert.assertEquals(createResponse.getStatusCode(), 201,
                         "Expected 201 OK Status code for contact creation");
         contactId = createResponse.jsonPath().getString("_id");
-        System.out.println("API: Contact Created with Id: " + contactId);
+        logger.setup("Contact created with Id: %s", contactId);
     }
 
     @Test(groups = {"api", "regression", "negative", "e2e"})
@@ -56,10 +58,10 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
 
         Response addResponse = contactClient.addContact(contactPayload);
         
-        Assert.assertEquals(addResponse.getStatusCode(), 400, 
+        Assert.assertEquals(addResponse.getStatusCode(), 400,
                 "Expected 400 Bad Request status code for invalid contact creation");
 
-        System.out.println("Contact creation failed. Invalid FirstName and LastName");
+        logger.validation("Contact creation failed - Invalid FirstName and LastName (400 Bad Request)");
 
         //Create a contact with Invalid email format.
         contactPayload.clear();
@@ -73,8 +75,8 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
 
         Assert.assertEquals(addResponse2.getStatusCode(), 400,
                 "Expected 400 Bad Request for invalid email format");
-        
-        System.out.println("Contact creation failed: Invalid email address provided.");
+
+        logger.validation("Contact creation failed - Invalid email address provided (400 Bad Request)");
 
         //Create Contact without Authentication
         contactPayload.clear();
@@ -84,8 +86,8 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
         Response addResponse3 = contactClientWithoutAuth.addContactWithoutAuthentication(contactPayload);
         Assert.assertEquals(addResponse3.getStatusCode(), 401,
                     "Expected 401 Unauthorized status code for unauthorized access");
-        
-        System.out.println("Contact creation failed. 401 Unauthorized");
+
+        logger.validation("Contact creation failed - 401 Unauthorized");
 
         //Update Contact with Invalid ID
         String invalidContactId = "6975c237ee4f4400154acee3";
@@ -95,8 +97,8 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
 
         Assert.assertEquals(updateResponse.getStatusCode(), 404,
                     "Expected 404 Not Found status code for invalid contact Id");
-        
-        System.out.println("Invalid Contact Id is Passed. 404 Not Found status code encountered");
+
+        logger.validation("Invalid Contact Id passed - 404 Not Found");
 
         //Update Contact with Invalid Payload
         invalidEmail = TestDataUtil.generateInvalidEmail();
@@ -109,9 +111,9 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
         Assert.assertEquals(updateResponse2.getStatusCode(), 400, 
                     "Expected 400 Bad Request status code for Invalid email format and Empty Update Payload");
         
-        Assert.assertEquals(getResponse.jsonPath().getString("email"), email, 
+        Assert.assertEquals(getResponse.jsonPath().getString("email"), email,
                 "Email is unchanged before and after update. So contact remains unchanged.");
-        System.out.println("Email is unchanged before and after update. Contact remains unchanged");
+        logger.validation("Email unchanged after invalid update - Contact remains unchanged");
 
         //Update contact without Authentication
         updatePayload.put("phone", TestDataUtil.generatePhoneNumber());
@@ -119,24 +121,24 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
         Response updateResponse3 = contactClientWithoutAuth.updateContact(updatePayload, contactId);
         Assert.assertEquals(updateResponse3.getStatusCode(), 401,
                  "Expected 401 Unauthorized status code for Invalid authentication");
-        
-        System.out.println("Invalid Authentication. 401 Unauthorized");
+
+        logger.validation("Update failed - Invalid Authentication (401 Unauthorized)");
 
         //Delete contact with Invalid ContactID
         Response deletResponse = contactClient.deleteContact(invalidContactId);
 
         Assert.assertEquals(deletResponse.getStatusCode(), 404,
                 "Expected 404 Not Found status code when invalid Contact Id passed");
-        
-        System.out.println("Contact deletion failed. 404 Not Found");
+
+        logger.validation("Contact deletion failed - Invalid Contact Id (404 Not Found)");
 
         //Delete contact without Authentication
         Response deletResponse2 = contactClientWithoutAuth.deleteContact(contactId);
 
         Assert.assertEquals(deletResponse2.getStatusCode(), 401,
                 "Expected 401 Unauthorized status code for Invalid Authentication.");
-        
-        System.out.println("Contact deletion failed. 401 Unauthorized");
+
+        logger.validation("Contact deletion failed - Unauthorized access (401)");
  
         //Delete contact
         Response deleteResponse = contactClient.deleteContact(contactId);
@@ -151,7 +153,7 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
         Assert.assertEquals(validatedeleteResponse.getStatusCode(), 404,
                 "Expected 404 Not Found status code for deleted contact.");
 
-        System.out.println("Deleted contact successfully not retrieved");
+        logger.validation("Deleted contact successfully not retrieved (404 response)");
     }
 
     @AfterClass(alwaysRun = true)
@@ -162,9 +164,9 @@ public class NegativeContactCrudApiTests extends BaseApiTest{
 
                     Assert.assertEquals(deleteResponse.getStatusCode(), 200,
                                     "Expected 200 OK Status code for Contact deletion");
-                    System.out.println("CLEANUP: Contact deletion status: " + deleteResponse.getStatusCode());
+                    logger.cleanup("Contact deletion status: %s", deleteResponse.getStatusCode());
             } else {
-                System.out.println("Contact Id is null. No CleanUp is required");
+                logger.cleanup("Contact Id is null - No cleanup required");
             }
     }
 }

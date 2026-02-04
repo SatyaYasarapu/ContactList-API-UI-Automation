@@ -1,23 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="76.37" tests="4" errors="0" skipped="0" failures="0">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="39.339" tests="8" errors="0" skipped="0" failures="0">
   <properties>
     <property name="java.specification.version" value="21"/>
     <property name="sun.cpu.isalist" value="amd64"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.class.path" value="C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\test-classes;C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\classes;C:\Users\ysatya\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\ysatya\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\ysatya\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\ysatya\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\ysatya\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\ysatya\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\playwright\1.41.2\playwright-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Users\ysatya\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver\1.41.2\driver-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver-bundle\1.41.2\driver-bundle-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.1\jackson-databind-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.1\jackson-annotations-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.1\jackson-core-2.17.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-core\2.22.1\log4j-core-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-api\2.22.1\log4j-api-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-testng\2.25.0\allure-testng-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-java-commons\2.25.0\allure-java-commons-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-model\2.25.0\allure-model-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-test-filter\2.25.0\allure-test-filter-2.25.0.jar;"/>
+    <property name="java.class.path" value="C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\test-classes;C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\classes;C:\Users\ysatya\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\ysatya\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\ysatya\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\ysatya\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\ysatya\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\ysatya\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\playwright\1.41.2\playwright-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Users\ysatya\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver\1.41.2\driver-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver-bundle\1.41.2\driver-bundle-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.1\jackson-databind-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.1\jackson-annotations-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.1\jackson-core-2.17.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-api\2.22.1\log4j-api-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-core\2.22.1\log4j-core-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-testng\2.25.0\allure-testng-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-java-commons\2.25.0\allure-java-commons-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-model\2.25.0\allure-model-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-test-filter\2.25.0\allure-test-filter-2.25.0.jar;"/>
     <property name="java.vm.vendor" value="Oracle Corporation"/>
     <property name="sun.arch.data.model" value="64"/>
+    <property name="root.level" value="INFO"/>
     <property name="user.variant" value=""/>
     <property name="java.vendor.url" value="https://java.oracle.com/"/>
     <property name="user.timezone" value="Asia/Calcutta"/>
+    <property name="log.level" value="INFO"/>
     <property name="os.name" value="Windows 11"/>
     <property name="java.vm.specification.version" value="21"/>
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Program Files\Java\jdk-21\bin"/>
-    <property name="sun.java.command" value="C:\Users\ysatya\AppData\Local\Temp\surefire11058334309429209484\surefirebooter-20260203123714616_3.jar C:\Users\ysatya\AppData\Local\Temp\surefire11058334309429209484 2026-02-03T12-37-14_436-jvmRun1 surefire-20260203123714616_1tmp surefire_0-20260203123714616_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\ysatya\AppData\Local\Temp\surefire17778758806432862162\surefirebooter-20260204112609770_3.jar C:\Users\ysatya\AppData\Local\Temp\surefire17778758806432862162 2026-02-04T11-26-09_609-jvmRun1 surefire-20260204112609770_1tmp surefire_0-20260204112609770_2tmp"/>
     <property name="jdk.debug" value="release"/>
-    <property name="surefire.test.class.path" value="C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\test-classes;C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\classes;C:\Users\ysatya\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\ysatya\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\ysatya\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\ysatya\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\ysatya\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\ysatya\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\playwright\1.41.2\playwright-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Users\ysatya\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver\1.41.2\driver-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver-bundle\1.41.2\driver-bundle-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.1\jackson-databind-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.1\jackson-annotations-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.1\jackson-core-2.17.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-core\2.22.1\log4j-core-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-api\2.22.1\log4j-api-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-testng\2.25.0\allure-testng-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-java-commons\2.25.0\allure-java-commons-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-model\2.25.0\allure-model-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-test-filter\2.25.0\allure-test-filter-2.25.0.jar;"/>
+    <property name="surefire.test.class.path" value="C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\test-classes;C:\Users\ysatya\Testing\contact-list-api-ui-automation\target\classes;C:\Users\ysatya\.m2\repository\org\testng\testng\7.9.0\testng-7.9.0.jar;C:\Users\ysatya\.m2\repository\org\slf4j\slf4j-api\1.7.36\slf4j-api-1.7.36.jar;C:\Users\ysatya\.m2\repository\com\beust\jcommander\1.82\jcommander-1.82.jar;C:\Users\ysatya\.m2\repository\org\webjars\jquery\3.7.1\jquery-3.7.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured\5.4.0\rest-assured-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy\4.0.16\groovy-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-xml\4.0.16\groovy-xml-4.0.16.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpclient\4.5.13\httpclient-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpcore\4.4.13\httpcore-4.4.13.jar;C:\Users\ysatya\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\ysatya\.m2\repository\commons-codec\commons-codec\1.11\commons-codec-1.11.jar;C:\Users\ysatya\.m2\repository\org\apache\httpcomponents\httpmime\4.5.13\httpmime-4.5.13.jar;C:\Users\ysatya\.m2\repository\org\ccil\cowan\tagsoup\tagsoup\1.2.1\tagsoup-1.2.1.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\xml-path\5.4.0\xml-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\commons\commons-lang3\3.11\commons-lang3-3.11.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\json-path\5.4.0\json-path-5.4.0.jar;C:\Users\ysatya\.m2\repository\org\apache\groovy\groovy-json\4.0.16\groovy-json-4.0.16.jar;C:\Users\ysatya\.m2\repository\io\rest-assured\rest-assured-common\5.4.0\rest-assured-common-5.4.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\playwright\1.41.2\playwright-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\google\code\gson\gson\2.8.9\gson-2.8.9.jar;C:\Users\ysatya\.m2\repository\org\opentest4j\opentest4j\1.2.0\opentest4j-1.2.0.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver\1.41.2\driver-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\microsoft\playwright\driver-bundle\1.41.2\driver-bundle-1.41.2.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.17.1\jackson-databind-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.17.1\jackson-annotations-2.17.1.jar;C:\Users\ysatya\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.17.1\jackson-core-2.17.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-api\2.22.1\log4j-api-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\apache\logging\log4j\log4j-core\2.22.1\log4j-core-2.22.1.jar;C:\Users\ysatya\.m2\repository\org\hamcrest\hamcrest\2.2\hamcrest-2.2.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-testng\2.25.0\allure-testng-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-java-commons\2.25.0\allure-java-commons-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-model\2.25.0\allure-model-2.25.0.jar;C:\Users\ysatya\.m2\repository\io\qameta\allure\allure-test-filter\2.25.0\allure-test-filter-2.25.0.jar;"/>
     <property name="allure.results.directory" value="target/allure-results"/>
     <property name="sun.cpu.endian" value="little"/>
     <property name="user.home" value="C:\Users\ysatya"/>
@@ -31,7 +33,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\ysatya\AppData\Local\Temp\surefire11058334309429209484\surefirebooter-20260203123714616_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\ysatya\AppData\Local\Temp\surefire17778758806432862162\surefirebooter-20260204112609770_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="21.0.1+12-LTS-29"/>
@@ -59,47 +61,74 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="65.0"/>
   </properties>
-  <testcase name="contactCrudHybridFlow" classname="com.thinkingtester.hybrid.tests.ContactApiUiHybridTests" time="36.301">
-    <system-out><![CDATA[Fetched Email is: testuser_f2d885@test.com
-API: Contact created ->69819ead4b01860015cbf123
-UI: Contact Found: testuser_f2d885@test.com
-API: Contact Updated. New PhoneNumber: 9327345870
-UI: Update reflected: 9327345870
-API: Contact Deleted
-UI: Deletion reflected
+  <testcase name="addContactWithValidData" classname="com.thinkingtester.api.crudTests.AddContactApiTest" time="1.24">
+    <system-out><![CDATA[11:26:11.882 [INFO ] BaseApiTest - SETUP: Initializing API test configuration
+11:26:12.372 [INFO ] BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+11:26:15.849 [INFO ] BaseApiTest - SETUP: API test configuration completed
+11:26:17.010 [INFO ] AddContactApiTest - Contact created successfully - ID: 6982df8075fc830015e8f985
 ]]></system-out>
     <system-err><![CDATA[SLF4J: Failed to load class "org.slf4j.impl.StaticLoggerBinder".
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See http://www.slf4j.org/codes.html#StaticLoggerBinder for further details.
 ]]></system-err>
   </testcase>
-  <testcase name="negativeContactDeletes" classname="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests" time="4.786">
-    <system-out><![CDATA[SETUP API: Contact created with ID: 69819ed3ad233500154ef0ce
-API: Contact deletion failed for Invalid contactId
-UI: Contact Found upon invalid deletion.testuser_f1cf0f@test.com
-API: Contact deletion failed successfully for Unauthorized access.
-UI: Contact Found on Unauthorized deletion
+  <testcase name="deleteContactById" classname="com.thinkingtester.api.crudTests.DeleteContactApiTest" time="2.227">
+    <system-out><![CDATA[11:26:18.189 [INFO ] AddContactApiTest - CLEANUP: Deleted contact - Status code: 200
+11:26:18.208 [INFO ] BaseApiTest - SETUP: Initializing API test configuration
+11:26:18.208 [INFO ] BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+11:26:18.208 [INFO ] BaseApiTest - SETUP: API test configuration completed
+11:26:19.293 [INFO ] DeleteContactApiTest - SETUP: Contact created successfully - ID: 6982df837756fc00150a453d
+11:26:20.409 [INFO ] DeleteContactApiTest - Contact deletion successful for Id: 6982df837756fc00150a453d
 ]]></system-out>
   </testcase>
-  <testcase name="negativeContactUpdates" classname="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests" time="7.438">
-    <system-out><![CDATA[CLEANUP: Contact deletion status: 200
-SETUP API: Contact created with ID: 69819edc4b01860015cbf124
-UI: Contact Found
-API: Contact Updated with invalid data
-UI: No changes detected when an invalid contact ID is provided.
-API: Update with Invalid ContactId completed
-UI: No changes detected when an invalid contact ID is provided.
-API: Contact Updated. 401 Unauthorized
-UI: No changes detected when an Unauthorized update is done.
+  <testcase name="getContactById" classname="com.thinkingtester.api.crudTests.GetContactApiTest" time="1.16">
+    <system-out><![CDATA[11:26:21.531 [INFO ] BaseApiTest - SETUP: Initializing API test configuration
+11:26:21.536 [INFO ] BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+11:26:21.536 [INFO ] BaseApiTest - SETUP: API test configuration completed
+11:26:22.686 [INFO ] GetContactApiTest - SETUP: Contact created successfully - ID: 6982df8675fc830015e8f986
+11:26:23.846 [INFO ] GetContactApiTest - Email fetched for Contact ID: 6982df8675fc830015e8f986 - Email: testuser_01610a@test.com
 ]]></system-out>
   </testcase>
-  <testcase name="partialE2EContactsFlow" classname="com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests" time="5.067">
-    <system-out><![CDATA[CLEANUP: Contact deletion status: 200
-SETUP API: Contact created with ID: 69819ee84b01860015cbf125
-API: Contact Updated. Updated PhoneNumber is: 9070962090
-UI: PhoneNumber updated from 9925370670 to new PhoneNumber: 9070962090
-API: Invalid Update Completed.
-UI: PhoneNumber remains unchanged: 9070962090
+  <testcase name="loginwithInvalidCredentials" classname="com.thinkingtester.api.crudTests.LoginApiTests" time="1.058">
+    <system-out><![CDATA[11:26:24.928 [INFO ] GetContactApiTest - CLEANUP: Deleted contact - Status code: 200
+11:26:24.928 [INFO ] BaseApiTest - SETUP: Initializing API test configuration
+11:26:24.928 [INFO ] BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+11:26:24.928 [INFO ] BaseApiTest - SETUP: API test configuration completed
+11:26:25.996 [INFO ] LoginApiTests - Negative login validated successfully - 401 Unauthorized
+]]></system-out>
+  </testcase>
+  <testcase name="loginwithValidCredentials" classname="com.thinkingtester.api.crudTests.LoginApiTests" time="1.158"/>
+  <testcase name="updateContactByID" classname="com.thinkingtester.api.crudTests.UpdateContactApiTest" time="1.161">
+    <system-out><![CDATA[11:26:27.171 [INFO ] BaseApiTest - SETUP: Initializing API test configuration
+11:26:27.171 [INFO ] BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+11:26:27.171 [INFO ] BaseApiTest - SETUP: API test configuration completed
+11:26:28.319 [INFO ] UpdateContactApiTest - SETUP: Contact created successfully - ID: 6982df8c75fc830015e8f988
+]]></system-out>
+  </testcase>
+  <testcase name="contacte2eFlow" classname="com.thinkingtester.api.tests.ContactCrudApiTests" time="5.423">
+    <system-out><![CDATA[11:26:30.552 [INFO ] UpdateContactApiTest - CLEANUP: Deleted contact - Status code: 200
+11:26:30.553 [INFO ] BaseApiTest - SETUP: Initializing API test configuration
+11:26:30.553 [INFO ] BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+11:26:30.553 [INFO ] BaseApiTest - SETUP: API test configuration completed
+11:26:31.651 [INFO ] ContactCrudApiTests - Contact created successfully - Id: 6982df8f75fc830015e8f989
+11:26:34.906 [INFO ] ContactCrudApiTests - Contact deletion successful for Id: 6982df8f75fc830015e8f989
+11:26:35.979 [INFO ] ContactCrudApiTests - Deleted contact successfully not retrieved (404 response)
+]]></system-out>
+  </testcase>
+  <testcase name="negativeContacte2eFlow" classname="com.thinkingtester.api.tests.NegativeContactCrudApiTests" time="12.289">
+    <system-out><![CDATA[11:26:35.982 [INFO ] BaseApiTest - SETUP: Initializing API test configuration
+11:26:35.982 [INFO ] BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+11:26:35.982 [INFO ] BaseApiTest - SETUP: API test configuration completed
+11:26:37.090 [INFO ] NegativeContactCrudApiTests - SETUP: Contact created with Id: 6982df9475fc830015e8f98a
+11:26:38.191 [INFO ] NegativeContactCrudApiTests - Contact creation failed - Invalid FirstName and LastName (400 Bad Request)
+11:26:39.294 [INFO ] NegativeContactCrudApiTests - Contact creation failed - Invalid email address provided (400 Bad Request)
+11:26:40.433 [INFO ] NegativeContactCrudApiTests - Contact creation failed - 401 Unauthorized
+11:26:41.518 [INFO ] NegativeContactCrudApiTests - Invalid Contact Id passed - 404 Not Found
+11:26:43.694 [INFO ] NegativeContactCrudApiTests - Email unchanged after invalid update - Contact remains unchanged
+11:26:44.764 [INFO ] NegativeContactCrudApiTests - Update failed - Invalid Authentication (401 Unauthorized)
+11:26:46.103 [INFO ] NegativeContactCrudApiTests - Contact deletion failed - Invalid Contact Id (404 Not Found)
+11:26:47.141 [INFO ] NegativeContactCrudApiTests - Contact deletion failed - Unauthorized access (401)
+11:26:49.371 [INFO ] NegativeContactCrudApiTests - Deleted contact successfully not retrieved (404 response)
 ]]></system-out>
   </testcase>
 </testsuite>

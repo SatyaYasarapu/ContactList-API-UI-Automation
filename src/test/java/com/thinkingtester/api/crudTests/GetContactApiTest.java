@@ -12,10 +12,12 @@ import com.thinkingtester.api.clients.ContactApiClient;
 import com.thinkingtester.base.ApiRequestFactory;
 import com.thinkingtester.base.BaseApiTest;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 public class GetContactApiTest extends BaseApiTest {
+    private static final TestLogger logger = TestLogger.getLogger(GetContactApiTest.class);
     protected String contactId;
     protected String email;
     protected String phoneNumber;
@@ -43,7 +45,7 @@ public class GetContactApiTest extends BaseApiTest {
         contactId = response.jsonPath().getString("_id");
         Assert.assertNotNull(contactId,"Contact ID should not be null");
 
-        System.out.println("Contact created successfully. ID = " + contactId);
+        logger.setup("Contact created successfully - ID: %s", contactId);
     }
 
     @Test(groups = { "api", "regression" })
@@ -60,17 +62,17 @@ public class GetContactApiTest extends BaseApiTest {
         Assert.assertNotNull(response.jsonPath().getString("firstName"),
                 "First Name should not be null");
 
-        System.out.println("Email fetched for Contact ID: "
-                + response.jsonPath().getString("email"));
+        logger.info("Email fetched for Contact ID: %s - Email: %s",
+                contactId, response.jsonPath().getString("email"));
     }
     
     @AfterClass(alwaysRun = true)
     public void cleanupContactTestData() {
         if(contactId != null){
             ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
-        
+
             Response deleteResponse = contactClient.deleteContact(contactId);
-            System.out.println("CLEANUP: Deleted contact status code: " + deleteResponse.getStatusCode());
+            logger.cleanup("Deleted contact - Status code: %s", deleteResponse.getStatusCode());
         }
     }
 }

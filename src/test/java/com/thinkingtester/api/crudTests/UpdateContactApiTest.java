@@ -12,10 +12,12 @@ import com.thinkingtester.api.clients.ContactApiClient;
 import com.thinkingtester.base.ApiRequestFactory;
 import com.thinkingtester.base.BaseApiTest;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 public class UpdateContactApiTest extends BaseApiTest{
+    private static final TestLogger logger = TestLogger.getLogger(UpdateContactApiTest.class);
     protected String contactId;
     protected String email;
     protected String phoneNumber;
@@ -45,8 +47,8 @@ public class UpdateContactApiTest extends BaseApiTest{
         contactId = createResponse.jsonPath().getString("_id");
         Assert.assertNotNull(contactId,"Contact ID should not be null");
 
-        System.out.println("Contact created successfully. ID = " + contactId);
-        System.out.println("Contact reponse before Update is: " + createResponse.asPrettyString());
+        logger.setup("Contact created successfully - ID: %s", contactId);
+        logger.debugResponse("Create Contact (Before Update)", createResponse.asPrettyString());
     }
 
     @Test(groups = {"api", "regression"})
@@ -63,17 +65,17 @@ public class UpdateContactApiTest extends BaseApiTest{
 
         Assert.assertEquals(updateResponse.jsonPath().get("_id"), contactId,
                         "Fetched Contact ID mismatch");
-        
-        System.out.println("Contact reponse after Update is: " + updateResponse.asPrettyString());
+
+        logger.debugResponse("Update Contact", updateResponse.asPrettyString());
     }
 
     @AfterClass(alwaysRun = true)
     public void cleanupContactTestData() {
         if(contactId != null){
             ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
-        
+
             Response deleteResponse = contactClient.deleteContact(contactId);
-            System.out.println("CLEANUP: Deleted contact status code: " + deleteResponse.getStatusCode());
+            logger.cleanup("Deleted contact - Status code: %s", deleteResponse.getStatusCode());
         }
     }
 }

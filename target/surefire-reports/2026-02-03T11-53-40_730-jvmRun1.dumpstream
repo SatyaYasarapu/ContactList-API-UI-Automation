@@ -1,4 +1,0 @@
-# Created at 2026-02-03T11:53:43.380
-
-com.thinkingtester.api.crudTests.DeleteContactApiTest.deleteContactById() depends on nonexistent method com.thinkingtester.api.tests.AddContactApiTest.addContactWithValidData
-

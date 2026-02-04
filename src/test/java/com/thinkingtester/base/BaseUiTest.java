@@ -15,8 +15,10 @@ import com.microsoft.playwright.Playwright;
 import com.microsoft.playwright.options.Cookie;
 import com.thinkingtester.config.ConfigReader;
 import com.thinkingtester.utils.AuthTokenManager;
+import com.thinkingtester.utils.TestLogger;
 
 public abstract class BaseUiTest {
+    protected static final TestLogger logger = TestLogger.getLogger(BaseUiTest.class);
 
     protected Playwright playwright;
     protected Browser browser;
@@ -27,11 +29,13 @@ public abstract class BaseUiTest {
 
     @BeforeClass(alwaysRun = true)
     public void launchBrowser() {
+        logger.setup("Launching browser for UI tests");
         playwright = Playwright.create();
         browser = playwright.chromium().launch(
-                new BrowserType.LaunchOptions().setHeadless(false)
+                new BrowserType.LaunchOptions().setHeadless(ConfigReader.getBoolean("headless"))
                 .setArgs(java.util.List.of("--start-maximized"))
         );
+        logger.setup("Browser launched successfully");
     }
 
     @BeforeMethod(alwaysRun = true)

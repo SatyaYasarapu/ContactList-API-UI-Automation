@@ -1,0 +1,21 @@
+2026-02-04 11:26:11.882 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:12.372 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:15.849 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:18.208 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:18.208 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:18.208 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:21.531 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:21.536 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:21.536 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:24.928 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:24.928 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:24.928 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:27.171 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:27.171 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:27.171 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:30.553 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:30.553 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:30.553 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:35.982 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:35.982 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:35.982 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed

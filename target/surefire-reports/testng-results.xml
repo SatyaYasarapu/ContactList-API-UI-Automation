@@ -1,147 +1,160 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="0" total="8" passed="8" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2026-02-03T12:37:15 IST" name="ThinkingTester-Hybrid-Suite" finished-at="2026-02-03T12:38:31 IST" duration-ms="75533">
+  <suite started-at="2026-02-04T11:26:11 IST" name="ThinkingTester-Hybrid-Suite" finished-at="2026-02-04T11:26:49 IST" duration-ms="37627">
     <groups>
-      <group name="hybrid">
-        <method signature="ContactApiUiHybridTests.contactCrudHybridFlow()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" name="contactCrudHybridFlow" class="com.thinkingtester.hybrid.tests.ContactApiUiHybridTests"/>
-        <method signature="NegativeDeleteHybridTests.negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" name="negativeContactDeletes" class="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests"/>
-        <method signature="NegativeUpdateHybridTests.negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" name="negativeContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
-        <method signature="PartialFailureHybridTests.partialE2EContactsFlow()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" name="partialE2EContactsFlow" class="com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests"/>
-      </group> <!-- hybrid -->
+      <group name="crud">
+        <method signature="ContactCrudApiTests.contacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.ContactCrudApiTests@459f7aa3]" name="contacte2eFlow" class="com.thinkingtester.api.tests.ContactCrudApiTests"/>
+      </group> <!-- crud -->
+      <group name="negative">
+        <method signature="LoginApiTests.loginwithInvalidCredentials()[pri:0, instance:com.thinkingtester.api.crudTests.LoginApiTests@4a9e6faf]" name="loginwithInvalidCredentials" class="com.thinkingtester.api.crudTests.LoginApiTests"/>
+        <method signature="NegativeContactCrudApiTests.negativeContacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" name="negativeContacte2eFlow" class="com.thinkingtester.api.tests.NegativeContactCrudApiTests"/>
+      </group> <!-- negative -->
       <group name="regression">
-        <method signature="ContactApiUiHybridTests.contactCrudHybridFlow()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" name="contactCrudHybridFlow" class="com.thinkingtester.hybrid.tests.ContactApiUiHybridTests"/>
-        <method signature="NegativeDeleteHybridTests.negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" name="negativeContactDeletes" class="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests"/>
-        <method signature="NegativeUpdateHybridTests.negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" name="negativeContactUpdates" class="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests"/>
-        <method signature="PartialFailureHybridTests.partialE2EContactsFlow()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" name="partialE2EContactsFlow" class="com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests"/>
+        <method signature="AddContactApiTest.addContactWithValidData()[pri:0, instance:com.thinkingtester.api.crudTests.AddContactApiTest@48c40605]" name="addContactWithValidData" class="com.thinkingtester.api.crudTests.AddContactApiTest"/>
+        <method signature="DeleteContactApiTest.deleteContactById()[pri:0, instance:com.thinkingtester.api.crudTests.DeleteContactApiTest@379ab47b]" name="deleteContactById" class="com.thinkingtester.api.crudTests.DeleteContactApiTest"/>
+        <method signature="GetContactApiTest.getContactById()[pri:0, instance:com.thinkingtester.api.crudTests.GetContactApiTest@307765b4]" name="getContactById" class="com.thinkingtester.api.crudTests.GetContactApiTest"/>
+        <method signature="UpdateContactApiTest.updateContactByID()[pri:0, instance:com.thinkingtester.api.crudTests.UpdateContactApiTest@2c95ac9e]" name="updateContactByID" class="com.thinkingtester.api.crudTests.UpdateContactApiTest"/>
+        <method signature="ContactCrudApiTests.contacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.ContactCrudApiTests@459f7aa3]" name="contacte2eFlow" class="com.thinkingtester.api.tests.ContactCrudApiTests"/>
+        <method signature="NegativeContactCrudApiTests.negativeContacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" name="negativeContacte2eFlow" class="com.thinkingtester.api.tests.NegativeContactCrudApiTests"/>
       </group> <!-- regression -->
+      <group name="smoke">
+        <method signature="LoginApiTests.loginwithValidCredentials()[pri:0, instance:com.thinkingtester.api.crudTests.LoginApiTests@4a9e6faf]" name="loginwithValidCredentials" class="com.thinkingtester.api.crudTests.LoginApiTests"/>
+      </group> <!-- smoke -->
+      <group name="e2e">
+        <method signature="NegativeContactCrudApiTests.negativeContacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" name="negativeContacte2eFlow" class="com.thinkingtester.api.tests.NegativeContactCrudApiTests"/>
+      </group> <!-- e2e -->
+      <group name="api">
+        <method signature="AddContactApiTest.addContactWithValidData()[pri:0, instance:com.thinkingtester.api.crudTests.AddContactApiTest@48c40605]" name="addContactWithValidData" class="com.thinkingtester.api.crudTests.AddContactApiTest"/>
+        <method signature="DeleteContactApiTest.deleteContactById()[pri:0, instance:com.thinkingtester.api.crudTests.DeleteContactApiTest@379ab47b]" name="deleteContactById" class="com.thinkingtester.api.crudTests.DeleteContactApiTest"/>
+        <method signature="GetContactApiTest.getContactById()[pri:0, instance:com.thinkingtester.api.crudTests.GetContactApiTest@307765b4]" name="getContactById" class="com.thinkingtester.api.crudTests.GetContactApiTest"/>
+        <method signature="LoginApiTests.loginwithInvalidCredentials()[pri:0, instance:com.thinkingtester.api.crudTests.LoginApiTests@4a9e6faf]" name="loginwithInvalidCredentials" class="com.thinkingtester.api.crudTests.LoginApiTests"/>
+        <method signature="LoginApiTests.loginwithValidCredentials()[pri:0, instance:com.thinkingtester.api.crudTests.LoginApiTests@4a9e6faf]" name="loginwithValidCredentials" class="com.thinkingtester.api.crudTests.LoginApiTests"/>
+        <method signature="UpdateContactApiTest.updateContactByID()[pri:0, instance:com.thinkingtester.api.crudTests.UpdateContactApiTest@2c95ac9e]" name="updateContactByID" class="com.thinkingtester.api.crudTests.UpdateContactApiTest"/>
+        <method signature="ContactCrudApiTests.contacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.ContactCrudApiTests@459f7aa3]" name="contacte2eFlow" class="com.thinkingtester.api.tests.ContactCrudApiTests"/>
+        <method signature="NegativeContactCrudApiTests.negativeContacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" name="negativeContacte2eFlow" class="com.thinkingtester.api.tests.NegativeContactCrudApiTests"/>
+      </group> <!-- api -->
     </groups>
-    <test started-at="2026-02-03T12:37:15 IST" name="API Tests" finished-at="2026-02-03T12:37:15 IST" duration-ms="11">
+    <test started-at="2026-02-04T11:26:11 IST" name="API Tests" finished-at="2026-02-04T11:26:49 IST" duration-ms="37543">
+      <class name="com.thinkingtester.api.crudTests.DeleteContactApiTest">
+        <test-method is-config="true" signature="setUpApi()[pri:0, instance:com.thinkingtester.api.crudTests.DeleteContactApiTest@379ab47b]" started-at="2026-02-04T11:26:18 IST" name="setUpApi" finished-at="2026-02-04T11:26:18 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApi -->
+        <test-method is-config="true" signature="setUpContactTestData()[pri:0, instance:com.thinkingtester.api.crudTests.DeleteContactApiTest@379ab47b]" started-at="2026-02-04T11:26:18 IST" name="setUpContactTestData" finished-at="2026-02-04T11:26:19 IST" duration-ms="1085" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpContactTestData -->
+        <test-method signature="deleteContactById()[pri:0, instance:com.thinkingtester.api.crudTests.DeleteContactApiTest@379ab47b]" started-at="2026-02-04T11:26:19 IST" name="deleteContactById" finished-at="2026-02-04T11:26:21 IST" duration-ms="2220" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteContactById -->
+        <test-method is-config="true" signature="cleanupContactTestData()[pri:0, instance:com.thinkingtester.api.crudTests.DeleteContactApiTest@379ab47b]" started-at="2026-02-04T11:26:21 IST" name="cleanupContactTestData" finished-at="2026-02-04T11:26:21 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanupContactTestData -->
+      </class> <!-- com.thinkingtester.api.crudTests.DeleteContactApiTest -->
+      <class name="com.thinkingtester.api.tests.NegativeContactCrudApiTests">
+        <test-method is-config="true" signature="setUpApi()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" started-at="2026-02-04T11:26:35 IST" name="setUpApi" finished-at="2026-02-04T11:26:35 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApi -->
+        <test-method is-config="true" signature="setupContactTestData()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" started-at="2026-02-04T11:26:35 IST" name="setupContactTestData" finished-at="2026-02-04T11:26:37 IST" duration-ms="1108" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setupContactTestData -->
+        <test-method signature="negativeContacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" started-at="2026-02-04T11:26:37 IST" name="negativeContacte2eFlow" finished-at="2026-02-04T11:26:49 IST" duration-ms="12281" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- negativeContacte2eFlow -->
+        <test-method is-config="true" signature="cleanUpContactTestData()[pri:0, instance:com.thinkingtester.api.tests.NegativeContactCrudApiTests@7cc586a8]" started-at="2026-02-04T11:26:49 IST" name="cleanUpContactTestData" finished-at="2026-02-04T11:26:49 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpContactTestData -->
+      </class> <!-- com.thinkingtester.api.tests.NegativeContactCrudApiTests -->
+      <class name="com.thinkingtester.api.crudTests.GetContactApiTest">
+        <test-method is-config="true" signature="setUpApi()[pri:0, instance:com.thinkingtester.api.crudTests.GetContactApiTest@307765b4]" started-at="2026-02-04T11:26:21 IST" name="setUpApi" finished-at="2026-02-04T11:26:21 IST" duration-ms="6" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApi -->
+        <test-method is-config="true" signature="setUpContactTestData()[pri:0, instance:com.thinkingtester.api.crudTests.GetContactApiTest@307765b4]" started-at="2026-02-04T11:26:21 IST" name="setUpContactTestData" finished-at="2026-02-04T11:26:22 IST" duration-ms="1149" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpContactTestData -->
+        <test-method signature="getContactById()[pri:0, instance:com.thinkingtester.api.crudTests.GetContactApiTest@307765b4]" started-at="2026-02-04T11:26:22 IST" name="getContactById" finished-at="2026-02-04T11:26:23 IST" duration-ms="1160" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getContactById -->
+        <test-method is-config="true" signature="cleanupContactTestData()[pri:0, instance:com.thinkingtester.api.crudTests.GetContactApiTest@307765b4]" started-at="2026-02-04T11:26:23 IST" name="cleanupContactTestData" finished-at="2026-02-04T11:26:24 IST" duration-ms="1082" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanupContactTestData -->
+      </class> <!-- com.thinkingtester.api.crudTests.GetContactApiTest -->
+      <class name="com.thinkingtester.api.tests.ContactCrudApiTests">
+        <test-method is-config="true" signature="setUpApi()[pri:0, instance:com.thinkingtester.api.tests.ContactCrudApiTests@459f7aa3]" started-at="2026-02-04T11:26:30 IST" name="setUpApi" finished-at="2026-02-04T11:26:30 IST" duration-ms="3" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApi -->
+        <test-method signature="contacte2eFlow()[pri:0, instance:com.thinkingtester.api.tests.ContactCrudApiTests@459f7aa3]" started-at="2026-02-04T11:26:30 IST" name="contacte2eFlow" finished-at="2026-02-04T11:26:35 IST" duration-ms="5424" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- contacte2eFlow -->
+        <test-method is-config="true" signature="cleanUpContactTestData()[pri:0, instance:com.thinkingtester.api.tests.ContactCrudApiTests@459f7aa3]" started-at="2026-02-04T11:26:35 IST" name="cleanUpContactTestData" finished-at="2026-02-04T11:26:35 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanUpContactTestData -->
+      </class> <!-- com.thinkingtester.api.tests.ContactCrudApiTests -->
+      <class name="com.thinkingtester.api.crudTests.LoginApiTests">
+        <test-method signature="loginwithInvalidCredentials()[pri:0, instance:com.thinkingtester.api.crudTests.LoginApiTests@4a9e6faf]" started-at="2026-02-04T11:26:24 IST" name="loginwithInvalidCredentials" finished-at="2026-02-04T11:26:25 IST" duration-ms="1068" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginwithInvalidCredentials -->
+        <test-method is-config="true" signature="setUpApi()[pri:0, instance:com.thinkingtester.api.crudTests.LoginApiTests@4a9e6faf]" started-at="2026-02-04T11:26:24 IST" name="setUpApi" finished-at="2026-02-04T11:26:24 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApi -->
+        <test-method signature="loginwithValidCredentials()[pri:0, instance:com.thinkingtester.api.crudTests.LoginApiTests@4a9e6faf]" started-at="2026-02-04T11:26:25 IST" name="loginwithValidCredentials" finished-at="2026-02-04T11:26:27 IST" duration-ms="1168" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginwithValidCredentials -->
+      </class> <!-- com.thinkingtester.api.crudTests.LoginApiTests -->
+      <class name="com.thinkingtester.api.crudTests.AddContactApiTest">
+        <test-method is-config="true" signature="setUpApi()[pri:0, instance:com.thinkingtester.api.crudTests.AddContactApiTest@48c40605]" started-at="2026-02-04T11:26:11 IST" name="setUpApi" finished-at="2026-02-04T11:26:15 IST" duration-ms="3981" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApi -->
+        <test-method signature="addContactWithValidData()[pri:0, instance:com.thinkingtester.api.crudTests.AddContactApiTest@48c40605]" started-at="2026-02-04T11:26:15 IST" name="addContactWithValidData" finished-at="2026-02-04T11:26:17 IST" duration-ms="1181" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addContactWithValidData -->
+        <test-method is-config="true" signature="cleanupContactTestData()[pri:0, instance:com.thinkingtester.api.crudTests.AddContactApiTest@48c40605]" started-at="2026-02-04T11:26:17 IST" name="cleanupContactTestData" finished-at="2026-02-04T11:26:18 IST" duration-ms="1093" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanupContactTestData -->
+      </class> <!-- com.thinkingtester.api.crudTests.AddContactApiTest -->
+      <class name="com.thinkingtester.api.crudTests.UpdateContactApiTest">
+        <test-method is-config="true" signature="setUpApi()[pri:0, instance:com.thinkingtester.api.crudTests.UpdateContactApiTest@2c95ac9e]" started-at="2026-02-04T11:26:27 IST" name="setUpApi" finished-at="2026-02-04T11:26:27 IST" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpApi -->
+        <test-method is-config="true" signature="setUpContactTestData()[pri:0, instance:com.thinkingtester.api.crudTests.UpdateContactApiTest@2c95ac9e]" started-at="2026-02-04T11:26:27 IST" name="setUpContactTestData" finished-at="2026-02-04T11:26:28 IST" duration-ms="1146" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpContactTestData -->
+        <test-method signature="updateContactByID()[pri:0, instance:com.thinkingtester.api.crudTests.UpdateContactApiTest@2c95ac9e]" started-at="2026-02-04T11:26:28 IST" name="updateContactByID" finished-at="2026-02-04T11:26:29 IST" duration-ms="1147" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateContactByID -->
+        <test-method is-config="true" signature="cleanupContactTestData()[pri:0, instance:com.thinkingtester.api.crudTests.UpdateContactApiTest@2c95ac9e]" started-at="2026-02-04T11:26:29 IST" name="cleanupContactTestData" finished-at="2026-02-04T11:26:30 IST" duration-ms="1069" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- cleanupContactTestData -->
+      </class> <!-- com.thinkingtester.api.crudTests.UpdateContactApiTest -->
     </test> <!-- API Tests -->
-    <test started-at="2026-02-03T12:37:15 IST" name="UI Tests" finished-at="2026-02-03T12:37:15 IST" duration-ms="0">
+    <test started-at="2026-02-04T11:26:49 IST" name="UI Tests" finished-at="2026-02-04T11:26:49 IST" duration-ms="0">
     </test> <!-- UI Tests -->
-    <test started-at="2026-02-03T12:37:15 IST" name="HYBRID Tests" finished-at="2026-02-03T12:38:31 IST" duration-ms="75368">
-      <class name="com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" started-at="2026-02-03T12:38:01 IST" name="launchBrowser" finished-at="2026-02-03T12:38:02 IST" duration-ms="1370" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="setupContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" started-at="2026-02-03T12:38:02 IST" name="setupContactTestData" finished-at="2026-02-03T12:38:03 IST" duration-ms="1359" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupContactTestData -->
-        <test-method is-config="true" signature="createAuthenticatedContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" started-at="2026-02-03T12:38:03 IST" name="createAuthenticatedContext" finished-at="2026-02-03T12:38:04 IST" duration-ms="264" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAuthenticatedContext -->
-        <test-method signature="negativeContactDeletes()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" started-at="2026-02-03T12:38:04 IST" name="negativeContactDeletes" finished-at="2026-02-03T12:38:08 IST" duration-ms="4786" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- negativeContactDeletes -->
-        <test-method is-config="true" signature="closeContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" started-at="2026-02-03T12:38:08 IST" name="closeContext" finished-at="2026-02-03T12:38:08 IST" duration-ms="65" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeContext -->
-        <test-method is-config="true" signature="cleanUpContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" started-at="2026-02-03T12:38:08 IST" name="cleanUpContactTestData" finished-at="2026-02-03T12:38:10 IST" duration-ms="1251" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUpContactTestData -->
-        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests@7a5ceedd]" started-at="2026-02-03T12:38:10 IST" name="tearDownBrowser" finished-at="2026-02-03T12:38:10 IST" duration-ms="237" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownBrowser -->
-      </class> <!-- com.thinkingtester.hybrid.tests.negative.NegativeDeleteHybridTests -->
-      <class name="com.thinkingtester.hybrid.tests.ContactApiUiHybridTests">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" started-at="2026-02-03T12:37:15 IST" name="launchBrowser" finished-at="2026-02-03T12:37:20 IST" duration-ms="4241" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="setupContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" started-at="2026-02-03T12:37:20 IST" name="setupContactTestData" finished-at="2026-02-03T12:37:20 IST" duration-ms="2" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupContactTestData -->
-        <test-method is-config="true" signature="createAuthenticatedContext()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" started-at="2026-02-03T12:37:20 IST" name="createAuthenticatedContext" finished-at="2026-02-03T12:37:24 IST" duration-ms="4178" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAuthenticatedContext -->
-        <test-method signature="contactCrudHybridFlow()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" started-at="2026-02-03T12:37:24 IST" name="contactCrudHybridFlow" finished-at="2026-02-03T12:38:00 IST" duration-ms="36295" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- contactCrudHybridFlow -->
-        <test-method is-config="true" signature="closeContext()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" started-at="2026-02-03T12:38:00 IST" name="closeContext" finished-at="2026-02-03T12:38:00 IST" duration-ms="38" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeContext -->
-        <test-method is-config="true" signature="cleanUpContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" started-at="2026-02-03T12:38:00 IST" name="cleanUpContactTestData" finished-at="2026-02-03T12:38:00 IST" duration-ms="3" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUpContactTestData -->
-        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.ContactApiUiHybridTests@673fdbce]" started-at="2026-02-03T12:38:00 IST" name="tearDownBrowser" finished-at="2026-02-03T12:38:01 IST" duration-ms="245" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownBrowser -->
-      </class> <!-- com.thinkingtester.hybrid.tests.ContactApiUiHybridTests -->
-      <class name="com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" started-at="2026-02-03T12:38:10 IST" name="launchBrowser" finished-at="2026-02-03T12:38:11 IST" duration-ms="1257" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="setupContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" started-at="2026-02-03T12:38:11 IST" name="setupContactTestData" finished-at="2026-02-03T12:38:12 IST" duration-ms="1164" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupContactTestData -->
-        <test-method is-config="true" signature="createAuthenticatedContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" started-at="2026-02-03T12:38:12 IST" name="createAuthenticatedContext" finished-at="2026-02-03T12:38:13 IST" duration-ms="303" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAuthenticatedContext -->
-        <test-method signature="negativeContactUpdates()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" started-at="2026-02-03T12:38:13 IST" name="negativeContactUpdates" finished-at="2026-02-03T12:38:20 IST" duration-ms="7437" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- negativeContactUpdates -->
-        <test-method is-config="true" signature="closeContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" started-at="2026-02-03T12:38:20 IST" name="closeContext" finished-at="2026-02-03T12:38:20 IST" duration-ms="60" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeContext -->
-        <test-method is-config="true" signature="cleanUpContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" started-at="2026-02-03T12:38:20 IST" name="cleanUpContactTestData" finished-at="2026-02-03T12:38:21 IST" duration-ms="1266" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUpContactTestData -->
-        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests@4201c465]" started-at="2026-02-03T12:38:21 IST" name="tearDownBrowser" finished-at="2026-02-03T12:38:22 IST" duration-ms="204" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownBrowser -->
-      </class> <!-- com.thinkingtester.hybrid.tests.negative.NegativeUpdateHybridTests -->
-      <class name="com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" started-at="2026-02-03T12:38:22 IST" name="launchBrowser" finished-at="2026-02-03T12:38:23 IST" duration-ms="1194" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="setupContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" started-at="2026-02-03T12:38:23 IST" name="setupContactTestData" finished-at="2026-02-03T12:38:24 IST" duration-ms="1176" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setupContactTestData -->
-        <test-method is-config="true" signature="createAuthenticatedContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" started-at="2026-02-03T12:38:24 IST" name="createAuthenticatedContext" finished-at="2026-02-03T12:38:24 IST" duration-ms="269" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- createAuthenticatedContext -->
-        <test-method signature="partialE2EContactsFlow()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" started-at="2026-02-03T12:38:24 IST" name="partialE2EContactsFlow" finished-at="2026-02-03T12:38:29 IST" duration-ms="5059" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- partialE2EContactsFlow -->
-        <test-method is-config="true" signature="closeContext()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" started-at="2026-02-03T12:38:29 IST" name="closeContext" finished-at="2026-02-03T12:38:29 IST" duration-ms="68" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeContext -->
-        <test-method is-config="true" signature="cleanUpContactTestData()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" started-at="2026-02-03T12:38:29 IST" name="cleanUpContactTestData" finished-at="2026-02-03T12:38:31 IST" duration-ms="1218" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- cleanUpContactTestData -->
-        <test-method is-config="true" signature="tearDownBrowser()[pri:0, instance:com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests@5b799640]" started-at="2026-02-03T12:38:31 IST" name="tearDownBrowser" finished-at="2026-02-03T12:38:31 IST" duration-ms="223" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownBrowser -->
-      </class> <!-- com.thinkingtester.hybrid.tests.negative.PartialFailureHybridTests -->
+    <test started-at="2026-02-04T11:26:49 IST" name="HYBRID Tests" finished-at="2026-02-04T11:26:49 IST" duration-ms="4">
     </test> <!-- HYBRID Tests -->
   </suite> <!-- ThinkingTester-Hybrid-Suite -->
 </testng-results>

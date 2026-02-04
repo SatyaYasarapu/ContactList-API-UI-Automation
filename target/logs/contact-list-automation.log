@@ -1,0 +1,45 @@
+2026-02-04 11:26:11.882 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:12.372 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:15.849 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:17.010 [main] INFO  com.thinkingtester.api.crudTests.AddContactApiTest - Contact created successfully - ID: 6982df8075fc830015e8f985
+2026-02-04 11:26:18.189 [main] INFO  com.thinkingtester.api.crudTests.AddContactApiTest - CLEANUP: Deleted contact - Status code: 200
+2026-02-04 11:26:18.208 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:18.208 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:18.208 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:19.293 [main] INFO  com.thinkingtester.api.crudTests.DeleteContactApiTest - SETUP: Contact created successfully - ID: 6982df837756fc00150a453d
+2026-02-04 11:26:20.409 [main] INFO  com.thinkingtester.api.crudTests.DeleteContactApiTest - Contact deletion successful for Id: 6982df837756fc00150a453d
+2026-02-04 11:26:21.531 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:21.536 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:21.536 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:22.686 [main] INFO  com.thinkingtester.api.crudTests.GetContactApiTest - SETUP: Contact created successfully - ID: 6982df8675fc830015e8f986
+2026-02-04 11:26:23.846 [main] INFO  com.thinkingtester.api.crudTests.GetContactApiTest - Email fetched for Contact ID: 6982df8675fc830015e8f986 - Email: testuser_01610a@test.com
+2026-02-04 11:26:24.928 [main] INFO  com.thinkingtester.api.crudTests.GetContactApiTest - CLEANUP: Deleted contact - Status code: 200
+2026-02-04 11:26:24.928 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:24.928 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:24.928 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:25.996 [main] INFO  com.thinkingtester.api.crudTests.LoginApiTests - Negative login validated successfully - 401 Unauthorized
+2026-02-04 11:26:27.171 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:27.171 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:27.171 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:28.319 [main] INFO  com.thinkingtester.api.crudTests.UpdateContactApiTest - SETUP: Contact created successfully - ID: 6982df8c75fc830015e8f988
+2026-02-04 11:26:30.552 [main] INFO  com.thinkingtester.api.crudTests.UpdateContactApiTest - CLEANUP: Deleted contact - Status code: 200
+2026-02-04 11:26:30.553 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:30.553 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:30.553 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:31.651 [main] INFO  com.thinkingtester.api.tests.ContactCrudApiTests - Contact created successfully - Id: 6982df8f75fc830015e8f989
+2026-02-04 11:26:34.906 [main] INFO  com.thinkingtester.api.tests.ContactCrudApiTests - Contact deletion successful for Id: 6982df8f75fc830015e8f989
+2026-02-04 11:26:35.979 [main] INFO  com.thinkingtester.api.tests.ContactCrudApiTests - Deleted contact successfully not retrieved (404 response)
+2026-02-04 11:26:35.982 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: Initializing API test configuration
+2026-02-04 11:26:35.982 [main] INFO  com.thinkingtester.base.BaseApiTest - Base API URL: https://thinking-tester-contact-list.herokuapp.com
+2026-02-04 11:26:35.982 [main] INFO  com.thinkingtester.base.BaseApiTest - SETUP: API test configuration completed
+2026-02-04 11:26:37.090 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - SETUP: Contact created with Id: 6982df9475fc830015e8f98a
+2026-02-04 11:26:38.191 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Contact creation failed - Invalid FirstName and LastName (400 Bad Request)
+2026-02-04 11:26:39.294 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Contact creation failed - Invalid email address provided (400 Bad Request)
+2026-02-04 11:26:40.433 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Contact creation failed - 401 Unauthorized
+2026-02-04 11:26:41.518 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Invalid Contact Id passed - 404 Not Found
+2026-02-04 11:26:43.694 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Email unchanged after invalid update - Contact remains unchanged
+2026-02-04 11:26:44.764 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Update failed - Invalid Authentication (401 Unauthorized)
+2026-02-04 11:26:46.103 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Contact deletion failed - Invalid Contact Id (404 Not Found)
+2026-02-04 11:26:47.141 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Contact deletion failed - Unauthorized access (401)
+2026-02-04 11:26:49.371 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - Deleted contact successfully not retrieved (404 response)
+2026-02-04 11:26:49.379 [main] INFO  com.thinkingtester.api.tests.NegativeContactCrudApiTests - CLEANUP: Contact Id is null - No cleanup required

@@ -11,10 +11,12 @@ import com.thinkingtester.api.clients.ContactApiClient;
 import com.thinkingtester.base.ApiRequestFactory;
 import com.thinkingtester.base.BaseApiTest;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 public class AddContactApiTest extends BaseApiTest {
+    private static final TestLogger logger = TestLogger.getLogger(AddContactApiTest.class);
     protected String contactId;
     protected String email;
     protected String phoneNumber;
@@ -40,11 +42,11 @@ public class AddContactApiTest extends BaseApiTest {
                     "Expected status code 201 for contact creation");
         contactId = response.jsonPath().getString("_id");
 
-        Assert.assertNotNull("Contact ID should not be null");
+        Assert.assertNotNull(contactId, "Contact ID should not be null");
 
-        System.out.println("Contact created successfully. ID = " + contactId);
+        logger.info("Contact created successfully - ID: %s", contactId);
 
-        System.out.println("Response for " +contactId+ " is: " + response.asPrettyString());
+        logger.debugResponse("Add Contact", response.asPrettyString());
     }
     @AfterClass(alwaysRun = true)
     public void cleanupContactTestData() {
@@ -52,7 +54,7 @@ public class AddContactApiTest extends BaseApiTest {
             ContactApiClient contactClient = new ContactApiClient(ApiRequestFactory.newRequest());
         
             Response deleteResponse = contactClient.deleteContact(contactId);
-            System.out.println("CLEANUP: Deleted contact status code: " + deleteResponse.getStatusCode());
+            logger.cleanup("Deleted contact - Status code: %s", deleteResponse.getStatusCode());
         }
     }
 }

@@ -14,10 +14,12 @@ import com.thinkingtester.base.BaseUiTest;
 import com.thinkingtester.config.ConfigReader;
 import com.thinkingtester.ui.pages.ContactsPage;
 import com.thinkingtester.utils.TestDataUtil;
+import com.thinkingtester.utils.TestLogger;
 
 import io.restassured.response.Response;
 
 public class NegativeUpdateHybridTests extends BaseUiTest {
+    private static final TestLogger logger = TestLogger.getHybridLogger(NegativeUpdateHybridTests.class);
     protected String contactId;
     protected String email;
     protected String invalidContactId;
@@ -50,7 +52,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
         contactId = createResponse.jsonPath().getString("_id");
         Assert.assertNotNull(contactId, "Contact Id should not be null");
 
-        System.out.println("SETUP API: Contact created with ID: " + contactId);
+        logger.setup("API: Contact created with ID: %s", contactId);
     }
 
     @Test(groups = {"hybrid", "regression"})
@@ -63,9 +65,9 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
         page.navigate(url + "/contactList");
 
         contactsPage.waitForContactsTableToLoad();
-        Assert.assertTrue(contactsPage.isContactPresent(email), 
+        Assert.assertTrue(contactsPage.isContactPresent(email),
                 "Contact created via API should appear in UI");
-        System.out.println("UI: Contact Found");
+        logger.ui("Contact found in UI");
 
         //API: Invalid Update via API
         Map<String, Object> updatePayload = new HashMap<>();
@@ -75,7 +77,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
 
         Assert.assertEquals(updateResponse.getStatusCode(), 400,
                 "Expected 400 Bad Request Status code for invalid contact updation");
-        System.out.println("API: Contact Updated with invalid data");
+        logger.api("Contact update attempted with invalid data (400 Bad Request)");
 
         //UI: Verify Contact data is unchanged for invalid Update Payload.
         page.reload();
@@ -84,7 +86,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
 
         Assert.assertEquals(phoneNumberAfterUpdate, phoneNumber,
             "Phone number is changed after invalid contact updation");
-        System.out.println("UI: No changes detected when an invalid contact ID is provided.");
+        logger.ui("No changes detected - Invalid email format rejected");
 
         //API: Update Contact with Invalid ContactId
         invalidContactId = "697d930f901e190015c4e49e";
@@ -95,16 +97,16 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
 
         Assert.assertEquals(updateResponse2.getStatusCode(), 404,
                 "Expected 404 Not Found Status code");
-        System.out.println("API: Update with Invalid ContactId completed");
+        logger.api("Update with invalid ContactId completed (404 Not Found)");
 
         //UI: Verify contact data is unchanged for invalid contactId
         page.reload();
 
         phoneNumberAfterUpdate = contactsPage.getContactPhone(email);
 
-        Assert.assertEquals(phoneNumberAfterUpdate, phoneNumber, 
+        Assert.assertEquals(phoneNumberAfterUpdate, phoneNumber,
             "Phone Number is changed after updating with invalid contactId");
-        System.out.println("UI: No changes detected when an invalid contact ID is provided.");
+        logger.ui("No changes detected - Invalid ContactId");
 
         //API: Update contact without Authentication
         updatePayload.clear();
@@ -114,7 +116,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
         Assert.assertEquals(updateResponse3.getStatusCode(), 401,
                 "Expected 401 Unauthorized Status code");
 
-        System.out.println("API: Contact Updated. 401 Unauthorized");
+        logger.api("Contact update failed - Unauthorized (401)");
 
         //UI: Verify contact data is unchanged with unauthorized access
         page.reload();
@@ -122,7 +124,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
         Assert.assertEquals(contactsPage.getContactCountry(email), "India",
                     "Contact country is changed after unauthorized access");
 
-        System.out.println("UI: No changes detected when an Unauthorized update is done.");
+        logger.ui("No changes detected - Unauthorized update rejected");
     }
 
     @AfterClass(alwaysRun = true)
@@ -133,7 +135,7 @@ public class NegativeUpdateHybridTests extends BaseUiTest {
 
                     Assert.assertEquals(deleteResponse.getStatusCode(), 200,
                                     "Expected 200 OK Status code for Contact deletion");
-                    System.out.println("CLEANUP: Contact deletion status: " + deleteResponse.getStatusCode());
+                    logger.cleanup("Contact deletion status: %s", deleteResponse.getStatusCode());
             }
     }
     

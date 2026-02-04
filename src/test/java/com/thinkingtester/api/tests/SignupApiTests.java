@@ -8,11 +8,13 @@
 
 // import com.thinkingtester.api.clients.SignUpApiClient;
 // import com.thinkingtester.base.BaseApiTest;
+// import com.thinkingtester.utils.TestLogger;
 
 // import io.restassured.response.Response;
 
 // public class SignUpApiTests extends BaseApiTest {
-    
+//     private static final TestLogger logger = TestLogger.getLogger(SignUpApiTests.class);
+
 //     @Test(groups = {"api", "regression"})
 //     public void signUpWithValidData() {
 //         SignUpApiClient signUpClient = new SignUpApiClient(noAuthRequestSpec);
@@ -28,18 +30,18 @@
 //         Assert.assertEquals(singUpResponse.getStatusCode(), 201,
 //                 "Expected 201 OK Status code for new User SignIn");
 //         String signInToken = singUpResponse.jsonPath().getString("token");
-        
-//         System.out.println("API: New User Sign-In successful.");
+
+//         logger.info("New User Sign-In successful");
 
 //         //Get User Profile
 //         Response getResponse = signUpClient.getUser(signInToken);
-//         System.out.println("User Profile reponse body: " + getResponse.asPrettyString());
+//         logger.debugResponse("User Profile", getResponse.asPrettyString());
 
 //         // Delete User
 //         Response deleteResponse = signUpClient.deleteUser(signInToken);
 
 //         Assert.assertEquals(deleteResponse.getStatusCode(), 200,
 //                     "Expected 200 OK Status code for user deletion");
-//         System.out.println("API: User Deleted");
+//         logger.cleanup("User deleted successfully");
 //     }
 // }

@@ -74,6 +74,12 @@
         <!-- Logging -->
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>2.22.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-core</artifactId>
             <version>2.22.1</version>
         </dependency>
@@ -148,6 +154,8 @@
                         <allure.results.directory>
                             target/allure-results
                         </allure.results.directory>
+                        <log.level>INFO</log.level>
+                        <root.level>INFO</root.level>
                     </systemPropertyVariables>
                     <groups>${groups}</groups>
                     <testFailureIgnore>false</testFailureIgnore>
